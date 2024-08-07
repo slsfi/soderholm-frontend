@@ -21,8 +21,8 @@ export const config: Config = {
       enabled: true,
       image: {
         sv: {
-          altText: "Till vänster ett svartvitt foto av en kvinna med kort, vågigt hår, en enkel  mörk klänning och ett halssmycke. Till höger om henne finns en grön bakgrund med handskriven text ur en dagbok.",
-          URL: "assets/images/home-page-banner.jpg"
+          altText: "Till vänster ett svartvitt foto av en kvinna med kort, vågigt hår, en enkel mörk klänning och ett halssmycke. Till höger om henne en bakgrund som tonar ut i grönt.",
+          URL: "assets/images/open-graph/kerstin-soderholm-og-1345x705.jpg"
         }
       }
     },
@@ -35,8 +35,8 @@ export const config: Config = {
     }
   },
   collections: {
-    addTEIClassNames: true,
-    replaceImageAssetsPaths: true,
+    addTEIClassNames: false,
+    replaceImageAssetsPaths: false,
     enableLegacyIDs: false,
     enableMathJax: false,
     firstTextItem: {
@@ -119,8 +119,8 @@ export const config: Config = {
       introduction: false
     },
     highlightSearchMatches: true,
-    inlineIllustrations: [206],
-    mediaCollectionMappings: { 214: 44, 206: 19, 218: 19 },
+    inlineIllustrations: [],
+    mediaCollectionMappings: {},
     order: [
       [378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 
         393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 
@@ -208,6 +208,16 @@ export const config: Config = {
         orientationPortrait: false,
         alternateSources: [
           {
+            media: "(max-width: 1100px)",
+            srcset: "assets/images/kerstin_soderholm_1344x500.avif 1344w",
+            type: "image/avif"
+          },
+          {
+            media: "(max-width: 1100px)",
+            srcset: "assets/images/kerstin_soderholm_1344x500x713.jpg 1344w",
+            type: "image/jpeg"
+          },
+          {
             srcset: "assets/images/kerstin_soderholm_1917x713.avif 1917w",
             type: "image/avif"
           },
@@ -226,7 +236,7 @@ export const config: Config = {
         siteTitleOnImageOnSmallScreens: false
       },
       showContentGrid: false,
-      showFooter: false,
+      showFooter: true,
       showSearchbar: false
     },
     index: {

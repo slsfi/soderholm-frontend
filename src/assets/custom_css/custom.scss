@@ -191,7 +191,7 @@
 
 /* Added custom variables */
 :root {
-  --custom-action-color:          #48707F;
+  --custom-action-color:          #3E6E70;
   --custom-action-color-contrast: #fff;
 }
 
@@ -224,6 +224,7 @@ page-index[class][class] {
 
 /* Custom, project specific styles */
 
+/* Set background of actual side menu components to different than the nav element behind */
 ion-app[class][class] {
   main-side-menu,
   collection-side-menu {
@@ -246,10 +247,57 @@ page-home {
     background-color: transparent;
     font-family: 'Cormorant', var(--font-stack-tei);
     font-size: calc(2.675rem + 2.15vw);
+
+    /* Add soft glow around title text on very narrow screens */
+    @media screen and (max-width: 600px) {
+      text-shadow: #ddd 1px 0 8px;
+    }
   }
 
+  /* The top left of the banner image must remain in view */
   .banner .landscape-picture img {
     object-position: left top;
+  }
+
+  /* Reduce banner height on narrow screens */
+  @media screen and (max-width: 1100px) {
+    div.banner.banner {
+      height: 35%;
+      min-height: 200px;
+    }
+  }
+
+  .text-content div.site-presentation.markdown.markdown {
+    max-width: 600px;
+    text-align: left;
+
+    blockquote {
+      margin: 1em auto 2em auto;
+      max-width: 400px;
+      text-align: center;
+    }
+  }
+
+  img[src$="#home-sls-logo"] {
+    display: block;
+    margin: 3em auto;
+  }
+}
+
+page-about {
+  .markdown {
+    table {
+      font-size: 1rem;
+
+      > thead {
+        font-size: 1.0625rem
+      }
+
+      > tbody > tr > td {
+        border: 1px solid #d3d3d3;
+        padding: .1em;
+      }
+    }
   }
 }
 
@@ -292,24 +340,6 @@ page-elastic-search {
       font-family: monospace;
       font-size: 0.889em;
       padding: 0.125em 0.25em;
-    }
-  }
-}
-
-/* Tables in markdown */
-page-about {
-  .markdown {
-    table {
-      font-size: 1rem;
-
-      > thead {
-        font-size: 1.0625rem
-      }
-
-      > tbody > tr > td {
-        border: 1px solid #d3d3d3;
-        padding: .1em;
-      }
     }
   }
 }
