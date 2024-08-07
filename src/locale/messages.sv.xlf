@@ -387,13 +387,13 @@
     <unit id="DownloadTexts.Download">
       <segment state="initial">
         <source>Ladda ner</source>
-        <target>Ladda ner</target>
+        <target>Skriv ut</target>
       </segment>
     </unit>
     <unit id="DownloadTexts.DownloadAndPrint">
       <segment state="initial">
         <source>Ladda ner och skriv ut</source>
-        <target>Ladda ner och skriv ut</target>
+        <target>Skriv ut</target>
       </segment>
     </unit>
     <unit id="DownloadTexts.Format.HTML">
@@ -471,7 +471,7 @@
     <unit id="ElasticSearch.Collection">
       <segment state="initial">
         <source>Delutgåva</source>
-        <target>Delutgåva</target>
+        <target>Dagboksarkiv</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.CommentaryTo">
@@ -909,19 +909,19 @@
     <unit id="MainSideMenu.CollectionsGroup1">
       <segment state="initial">
         <source>Innehåll</source>
-        <target>Innehåll</target>
+        <target>Dagboksarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup2">
       <segment state="initial">
         <source>Innehåll 2</source>
-        <target>Innehåll 2</target>
+        <target>Brevarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup3">
       <segment state="initial">
         <source>Innehåll 3</source>
-        <target>Innehåll 3</target>
+        <target>Manuskriptarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup4">
@@ -939,7 +939,7 @@
     <unit id="MainSideMenu.Ebooks">
       <segment state="initial">
         <source>E-böcker</source>
-        <target>E-böcker</target>
+        <target>Dagböcker</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.Home">
@@ -957,7 +957,7 @@
     <unit id="MainSideMenu.IndexPersons">
       <segment state="initial">
         <source>Personregister</source>
-        <target>Personregister</target>
+        <target>Personer</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.IndexPlaces">
@@ -987,19 +987,19 @@
     <unit id="Manuscripts.Error">
       <segment state="initial">
         <source>Ett fel har uppstått. Manuskript kunde inte hämtas.</source>
-        <target>Ett fel har uppstått. Manuskript kunde inte hämtas.</target>
+        <target>Ett fel har uppstått. Transkriptionen kunde inte hämtas.</target>
       </segment>
     </unit>
     <unit id="Manuscripts.Manuscript">
       <segment state="initial">
         <source>Manuskript</source>
-        <target>Manuskript</target>
+        <target>Transkription</target>
       </segment>
     </unit>
     <unit id="Manuscripts.None">
       <segment state="initial">
         <source>Inga manuskriptutskrifter.</source>
-        <target>Inga manuskriptutskrifter.</target>
+        <target>Det finns ingen transkription för detta faksimil.</target>
       </segment>
     </unit>
     <unit id="Manuscripts.SelectMsDialogSubtitle">
@@ -1497,25 +1497,25 @@
     <unit id="Site.MetaDescription.Home">
       <segment state="initial">
         <source>En generell beskrivning av webbplatsen för sökmotorer.</source>
-        <target>En generell beskrivning av webbplatsen för sökmotorer.</target>
+        <target>Modernisten Kerstin Söderholms dagböcker, brev och skönlitterära manuskript.</target>
       </segment>
     </unit>
     <unit id="Site.Subtitle">
       <segment state="initial">
         <source>Webbplatsens undertitel</source>
-        <target>Webbplatsens undertitel</target>
+        <target></target>
       </segment>
     </unit>
     <unit id="Site.Title">
       <segment state="initial">
         <source>Webbplatsens titel</source>
-        <target>Webbplatsens titel</target>
+        <target>Kerstin Söderholm</target>
       </segment>
     </unit>
     <unit id="TopMenu.About">
       <segment state="initial">
         <source>Om utgåvan</source>
-        <target>Om utgåvan</target>
+        <target>Kerstin Söderholm</target>
       </segment>
     </unit>
     <unit id="TopMenu.AriaLabel">
@@ -1545,7 +1545,7 @@
     <unit id="TopMenu.LogoAltText">
       <segment state="initial">
         <source>Logo</source>
-        <target>Logo</target>
+        <target>Svenska litteratursällskapet i Finland r.f.</target>
       </segment>
     </unit>
     <unit id="TopMenu.Menu">
@@ -1731,7 +1731,7 @@
     <unit id="ViewOptions.Settings">
       <segment state="initial">
         <source>Inställningar</source>
-        <target>Inställningar</target>
+        <target>Textstorlek</target>
       </segment>
     </unit>
     <unit id="ViewOptions.Textsize">

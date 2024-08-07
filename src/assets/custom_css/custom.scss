@@ -188,3 +188,226 @@
   }
 
 */
+
+/* Added custom variables */
+:root {
+  --custom-action-color:          #48707F;
+  --custom-action-color-contrast: #fff;
+}
+
+/* Override CSS variables */
+:root {
+  --primary-color:                    #123036;
+  --primary-color-rgb:                18, 48, 54;
+  --primary-color-contrast:           #f1ebe0;
+  --secondary-color:                  #e6e1d8;
+  --default-link-color:               #0E6D7C;
+  --main-background-color:            #ecebe4;
+
+  --button-background-color:               var(--custom-action-color);
+  --button-text-color:                     var(--custom-action-color-contrast);
+  --fab-button-primary-background-color:   var(--custom-action-color);
+  --fab-button-primary-icon-color:         var(--custom-action-color-contrast);
+  --outline-button-color:                  var(--custom-action-color);
+}
+
+ion-app[class][class] {
+  --side-menu-background-color:                  #F2A341;
+  --top-menu-button-filter:                        none;
+  --side-menu-hover-color:                       #538494;
+  --side-menu-collection-title-background-color: #ddd8ce;
+}
+
+page-index[class][class] {
+  --list-heading-background-color: #ddd8ce;
+}
+
+/* Custom, project specific styles */
+
+ion-app[class][class] {
+  main-side-menu,
+  collection-side-menu {
+    background-color: var(--main-background-color);
+  }
+}
+
+/* Cookiebanner */
+a.cky-banner-element {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#cky-consent,
+#cky-settings-popup {
+  font-family: var(--font-stack-app-base);
+}
+
+page-home {
+  .title-wrapper .banner-title {
+    background-color: transparent;
+    font-family: 'Cormorant', var(--font-stack-tei);
+    font-size: calc(2.675rem + 2.15vw);
+  }
+
+  .banner .landscape-picture img {
+    object-position: left top;
+  }
+}
+
+page-elastic-search {
+  .info.markdown {
+    /* Sökinstruktionerna i avancerade sökningen */
+    details {
+      padding: .5em .5em 0;
+
+      ul li {
+        line-height: 1.5;
+      }
+
+      ul li + li {
+        padding-top: 0.75em;
+      }
+    }
+
+    summary {
+      font-weight: bold;
+      margin: -.5em -.5em 0;
+      padding: .5em;
+    }
+
+    details[open] {
+      border-bottom: 1px solid #aaa;
+      padding: .5em;
+
+      summary {
+        border-bottom: 1px solid #aaa;
+        margin-bottom: .5em;
+      }
+    }
+
+    .query_example {
+      background-color: #fdfdfd;
+      border: 1px solid var(--button-background-color);
+      border-radius: 3px;
+      color: var(--button-background-color);
+      font-family: monospace;
+      font-size: 0.889em;
+      padding: 0.125em 0.25em;
+    }
+  }
+}
+
+/* Tables in markdown */
+page-about {
+  .markdown {
+    table {
+      font-size: 1rem;
+
+      > thead {
+        font-size: 1.0625rem
+      }
+
+      > tbody > tr > td {
+        border: 1px solid #d3d3d3;
+        padding: .1em;
+      }
+    }
+  }
+}
+
+page-text {
+  div.tei {
+    /* Transcriptions */
+    .center {
+      text-align: left !important;
+    }
+    .tei_add_choice_sublinear {
+      top: 1em !important;
+    }
+    .tei_add_choice_noIndent_sublinear {
+      top: 1em !important;
+    }
+    .tei_add_choice_noIndent {
+      top: -1em !important;
+    }
+    span.teiManuscript.tei_add_over_hps {
+      top: -.7em !important;
+    }
+    .part {
+      left: 0 !important;
+    }
+    p.teiManuscript.dateline.noIndent {
+      text-indent:0 !important;
+      margin-bottom: 0 !important;
+    }
+    p.teiManuscript.noIndent {
+      text-indent:0 !important;
+      left:0 !important;
+    }
+    .center.bar img {
+      height: .3rem !important;
+      width: 8rem !important;
+    }
+    h3.tei.section2 {
+      margin-top:1.8rem !important;
+      margin-bottom:1rem !important;
+    }
+    .ttMs,
+    .ttEditor {
+      cursor: help;
+    }
+    .delSpan_editorial {
+      background-color: #cd955e;
+      display: inline-block;
+      left: -30px;
+      position: relative;
+    }
+    .delSpan_noIndent_editorial {
+      background-color: #cd955e;
+      display: inline-block;
+    }
+    .tei_deletion_editorial_wrapper {
+      text-decoration: line-through;
+      color: #a66e37 !important;
+    }
+    .tei_restore_editorial_wrapper {
+      border-bottom: 1px dashed #a66e37;
+    }
+    .tei_deletion_editorial {
+      text-decoration: none;
+      color: #000000;
+    }
+    .tei_deletion_add_editorial {
+      text-decoration: none;
+      color: #0000a1;
+    }
+    .tei_editorial {
+      color: #a66e37 !important;
+    }
+    .tei_note_editorial {
+      color: #a66e37 !important;
+      font-family: arial, helvetica, sans-serif;
+      font-size: 0.9em;
+    }
+    .tei_note_editorial_margin {
+      color: #a66e37 !important;
+      font-family: arial, helvetica, sans-serif;
+      font-size: 0.9em;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .tei_hi_editorial_wrapper {
+      text-decoration: underline;
+      color: #a66e37 !important;
+    }
+    .tei_hi_editorial {
+      text-decoration: none;
+      color: #000000;
+    }
+    .tei_deletion_editorial.tooltiptrigger.ttMs.hand {
+      color: #a66e37 !important;
+    }
+    span.teiManuscript.orig {
+      background-color: #f2a341;
+    }
+  }
+}
