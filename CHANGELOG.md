@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ### Changed
 
-- Set up project files, config, custom CSS and translations for production site. ([7a876d2](https://github.com/slsfi/soderholm-frontend/commit/7a876d2d0dd9a91d17e4139c54badb1cf71b1910), [4c5100c](https://github.com/slsfi/soderholm-frontend/commit/4c5100c57f0f67d6a1cbcd56519ac59b9cfe134e))
+- Set up project files, config, custom CSS and translations for production site. ([7a876d2](https://github.com/slsfi/soderholm-frontend/commit/7a876d2d0dd9a91d17e4139c54badb1cf71b1910), [4c5100c](https://github.com/slsfi/soderholm-frontend/commit/4c5100c57f0f67d6a1cbcd56519ac59b9cfe134e), [e7b8cbb](https://github.com/slsfi/soderholm-frontend/commit/e7b8cbb9962c352af471f2ef27157cb4e182b2d3))
 
 
 
