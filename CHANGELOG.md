@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## [Unreleased]
 
+
+
+## [1.4.4-production.2] – 2024-08-22
+
 ### Added
 
 - Style for image placeholder icon size in transcriptions.
@@ -417,4 +421,5 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.4.4-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.1...1.4.4-production.2
 [1.4.4-production.1]: https://github.com/slsfi/soderholm-frontend/releases/tag/1.4.4-production.1
