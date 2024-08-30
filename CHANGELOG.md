@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+### Changed
+
+- Assets: cover image for 'Brev'.
+
 ### Removed
 
 - Superfluous styles from `custom.scss`.
