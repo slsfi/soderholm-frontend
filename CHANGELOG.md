@@ -8,13 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.5.2-production.1] – 2024-08-30
+
 ### Changed
 
-- Assets: cover image for 'Brev'.
+- Assets: cover image for 'Brev'. ([25053ab](https://github.com/slsfi/soderholm-frontend/commit/25053abba7f8fd2691def0ea352d316b7747b23e))
+- Merge release [`v1.5.2`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.5.2) from upstream, original repository into `production` branch. ([8c5c667](https://github.com/slsfi/soderholm-frontend/commit/8c5c66710a85b4855933dd540c23f99226726096))
 
 ### Removed
 
-- Superfluous styles from `custom.scss`.
+- Superfluous styles from `custom.scss`. ([552f96d](https://github.com/slsfi/soderholm-frontend/commit/552f96d6a795eebce450f481632a8b7eaebebe05))
 
 
 
@@ -494,5 +499,6 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.5.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.2...1.5.2-production.1
 [1.4.4-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.1...1.4.4-production.2
 [1.4.4-production.1]: https://github.com/slsfi/soderholm-frontend/releases/tag/1.4.4-production.1
