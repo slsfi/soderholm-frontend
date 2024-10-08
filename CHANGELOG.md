@@ -10,16 +10,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 
 
-## [1.5.2-production.1] – 2024-08-30
+## [1.5.3-production.1] – 2024-10-08
 
 ### Changed
 
-- Assets: cover image for 'Brev'. ([25053ab](https://github.com/slsfi/soderholm-frontend/commit/25053abba7f8fd2691def0ea352d316b7747b23e))
-- Merge release [`v1.5.2`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.5.2) from upstream, original repository into `production` branch. ([8c5c667](https://github.com/slsfi/soderholm-frontend/commit/8c5c66710a85b4855933dd540c23f99226726096))
-
-### Removed
-
-- Superfluous styles from `custom.scss`. ([552f96d](https://github.com/slsfi/soderholm-frontend/commit/552f96d6a795eebce450f481632a8b7eaebebe05))
+- Merge release [`v1.5.3`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.5.3) from upstream, original repository into `production` branch. ([7729ad7](https://github.com/slsfi/soderholm-frontend/commit/7729ad7a27136d8729eac858492abbc9fd78d9b5))
 
 
 
@@ -33,6 +28,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - Deps (dev): update `@types/node` to 20.16.9. ([1ec69f7](https://github.com/slsfi/digital-edition-frontend-ng/commit/1ec69f7261474461b673d54fc6ea3f7b7c2f3ae4))
 - Deps (dev): update `jasmine-core` to 5.3.0. ([7d72e39](https://github.com/slsfi/digital-edition-frontend-ng/commit/7d72e39287ed5a3af06f87eecf8e76069c49826d))
 - Deps (transitive): update `browser-sync` to 3.0.3 and `serve-static` to 1.16.2. ([04a421d](https://github.com/slsfi/digital-edition-frontend-ng/commit/04a421dad2ac9239921712bed85ac988b68f9bf1))
+
+
+
+## [1.5.2-production.1] – 2024-08-30
+
+### Changed
+
+- Assets: cover image for 'Brev'. ([25053ab](https://github.com/slsfi/soderholm-frontend/commit/25053abba7f8fd2691def0ea352d316b7747b23e))
+- Merge release [`v1.5.2`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.5.2) from upstream, original repository into `production` branch. ([8c5c667](https://github.com/slsfi/soderholm-frontend/commit/8c5c66710a85b4855933dd540c23f99226726096))
+
+### Removed
+
+- Superfluous styles from `custom.scss`. ([552f96d](https://github.com/slsfi/soderholm-frontend/commit/552f96d6a795eebce450f481632a8b7eaebebe05))
 
 
 
@@ -513,6 +521,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.5.3-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.2-production.1...1.5.3-production.1
 [1.5.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.2...1.5.2-production.1
 [1.4.4-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.1...1.4.4-production.2
 [1.4.4-production.1]: https://github.com/slsfi/soderholm-frontend/releases/tag/1.4.4-production.1
