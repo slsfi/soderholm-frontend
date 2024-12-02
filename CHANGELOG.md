@@ -545,6 +545,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.5.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.3-production.1...1.5.4-production.1
 [1.5.3-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.2-production.1...1.5.3-production.1
 [1.5.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.2...1.5.2-production.1
 [1.4.4-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.4.4-production.1...1.4.4-production.2
