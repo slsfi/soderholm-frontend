@@ -8,10 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.6.4-production.1] – 2025-05-14
+
 ### Changed
 
-- Update disallow rules in `robots.txt`.
-- Update to base version [`1.6.4`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.6.4) from upstream, original repository.
+- Update disallow rules in `robots.txt`. ([900f951](https://github.com/slsfi/soderholm-frontend/commit/900f951a219c2137a1d01db76689179ac09ce556))
+- Update to base version [`1.6.4`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.6.4) from upstream, original repository. ([4facb1f](https://github.com/slsfi/soderholm-frontend/commit/4facb1f47a0d099478d817aea84f3686346d5de3))
 
 
 
@@ -719,6 +723,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.6.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.7-production.1...1.6.4-production.1
 [1.5.7-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.6-production.1...1.5.7-production.1
 [1.5.6-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.5-production.1...1.5.6-production.1
 [1.5.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.4-production.1...1.5.5-production.1
