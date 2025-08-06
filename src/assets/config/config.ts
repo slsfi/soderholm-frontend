@@ -118,6 +118,12 @@ export const config: Config = {
       foreword: false,
       introduction: false
     },
+    frontMatterPageDisabled: {
+      cover: [],
+      title: [],
+      foreword: [],
+      introduction: []
+    },
     highlightSearchMatches: true,
     inlineIllustrations: [],
     mediaCollectionMappings: {},
@@ -294,6 +300,10 @@ export const config: Config = {
         pageBreakOriginal: false,
         pageBreakEdition: false
       },
+      variantViewOptions: {
+        showVariationTypeOption: false,
+        defaultVariationType: "all"
+      },
       viewTypes: {
         showAll: false,
         readingtext: false,
@@ -304,6 +314,16 @@ export const config: Config = {
         illustrations: false,
         legend: false,
         metadata: false
+      },
+      viewTypeDisabledCollections: {
+        readingtext: [],
+        comments: [],
+        facsimiles: [],
+        manuscripts: [],
+        variants: [],
+        illustrations: [],
+        legend: [],
+        metadata: []
       }
     },
     title: {
@@ -350,7 +370,8 @@ export const config: Config = {
         indexPersons: true,
         indexPlaces: false,
         indexWorks: false
-      }
+      },
+      defaultExpanded: false
     },
     manuscripts: {
       showTitle: false,
