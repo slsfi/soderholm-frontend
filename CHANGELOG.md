@@ -8,10 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.8.2-production.1] – 2025-08-06
+
 ### Changed
 
-- Update to base version [`1.8.2`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.2) from upstream, original repository.
-- Disable manuscripts in config for unapplicable collections.
+- Update to base version [`1.8.2`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.2) from upstream, original repository. ([b4c598e](https://github.com/slsfi/soderholm-frontend/commit/b4c598e85e9687654c9fe4681212d7e662845cc5))
+- Disable manuscripts in config for unapplicable collections. ([7671f2b](https://github.com/slsfi/soderholm-frontend/commit/7671f2b63cf61d2fc8b91b60d1d3158651af78e4))
 
 
 
@@ -917,6 +921,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.8.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.5-production.1...1.8.2-production.1
 [1.6.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.4-production.1...1.6.5-production.1
 [1.6.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.7-production.1...1.6.4-production.1
 [1.5.7-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.6-production.1...1.5.7-production.1
