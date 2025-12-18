@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - Deps (dev): update `@types/express` to 4.17.25.
 - Deps (dev): update `@types/jasmine` to 5.1.13.
 - Deps (dev): update `@types/node` to 20.19.27.
+- Deps: update transitive dependencies.
 
 
 
