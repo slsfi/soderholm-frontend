@@ -8,16 +8,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.8.2-production.2] – 2025-12-18
+
 ### Changed
 
-- Update Matomo analytics code snippet.
-- Deps: update `@angular/cli` to 19.2.19 and `@angular/core` to 19.2.17.
-- Deps: update `express` to 4.22.1.
-- Deps: update `marked-footnote` to 1.4.0.
-- Deps (dev): update `@types/express` to 4.17.25.
-- Deps (dev): update `@types/jasmine` to 5.1.13.
-- Deps (dev): update `@types/node` to 20.19.27.
-- Deps: update transitive dependencies.
+- Update Matomo analytics code snippet. ([8069657](https://github.com/slsfi/soderholm-frontend/commit/806965773b20fb837d09839e03857c8fce012784))
+- Deps: update `@angular/cli` to 19.2.19 and `@angular/core` to 19.2.17. ([88b6ad0](https://github.com/slsfi/soderholm-frontend/commit/88b6ad08852417d2d1b5064cb2d06d3917820d4b))
+- Deps: update `express` to 4.22.1. ([22dd2fa](https://github.com/slsfi/soderholm-frontend/commit/22dd2fa3fd67c98f726709d02ee6fe7905e9161c))
+- Deps: update `marked-footnote` to 1.4.0. ([d91a3bb](https://github.com/slsfi/soderholm-frontend/commit/d91a3bb4738e8cc651e1e9f3b40fec404b7f1eeb))
+- Deps (dev): update `@types/express` to 4.17.25. ([67d66f6](https://github.com/slsfi/soderholm-frontend/commit/67d66f65e704ed5612a8988a9a742e33c4d20f46))
+- Deps (dev): update `@types/jasmine` to 5.1.13. ([8c827a9](https://github.com/slsfi/soderholm-frontend/commit/8c827a987f180aa809d1b248a3a295aec7140451))
+- Deps (dev): update `@types/node` to 20.19.27. ([bf7ea8f](https://github.com/slsfi/soderholm-frontend/commit/bf7ea8f8d62ad4e07492cd1219deff4bc917a6f7))
+- Deps: update transitive dependencies. ([125b710](https://github.com/slsfi/soderholm-frontend/commit/125b710dbdaabc033e909b66f1cfcf6428e54e3a))
 
 
 
@@ -932,6 +936,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.8.2-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.1...1.8.2-production.2
 [1.8.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.5-production.1...1.8.2-production.1
 [1.6.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.4-production.1...1.6.5-production.1
 [1.6.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.5.7-production.1...1.6.4-production.1
