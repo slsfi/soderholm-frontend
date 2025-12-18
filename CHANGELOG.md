@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 ### Changed
 
 - Update Matomo analytics code snippet.
+- Deps: update `@angular/cli` to 19.2.19 and `@angular/core` to 19.2.17.
 
 
 
