@@ -1,6 +1,6 @@
 {
   "name": "soderholm.sls.fi",
-  "version": "1.8.2-production.2",
+  "version": "1.8.2-production.3",
   "description": "Frontend of soderholm.sls.fi based on the Angular web app for the SLS Digital Edition Platform",
   "homepage": "https://github.com/slsfi/soderholm-frontend#readme",
   "license": "MIT",

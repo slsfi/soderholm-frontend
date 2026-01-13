@@ -8,9 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.8.2-production.3] – 2026-01-13
+
 ### Removed
 
-- CookieYes code snippet from `index.html`.
+- CookieYes code snippet from `index.html`. ([1e19c16](https://github.com/slsfi/soderholm-frontend/commit/1e19c16b0f475b713f8e51eac30be80ee24ca6aa))
 
 
 
@@ -940,6 +944,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.8.2-production.3]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.2...1.8.2-production.3
 [1.8.2-production.2]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.1...1.8.2-production.2
 [1.8.2-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.5-production.1...1.8.2-production.1
 [1.6.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.6.4-production.1...1.6.5-production.1
