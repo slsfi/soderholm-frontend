@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+### Removed
+
+- CookieYes code snippet from `index.html`.
+
 
 
 ## [1.8.2-production.2] – 2025-12-18
