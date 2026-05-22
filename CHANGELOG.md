@@ -10,6 +10,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 
 
+## [1.8.5-production.1] – 2026-05-22
+
+### Changed
+
+- Update to base version [`1.8.5`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.5) from upstream, original repository. ([975792f](https://github.com/slsfi/soderholm-frontend/commit/975792f96fcea96ab8c8dc055bec5efe42674680))
+
+
+
 ## [1.8.5] – 2026-05-22
 
 > [!WARNING]
@@ -17,7 +25,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ### Changed
 
-- Update to base version [`1.8.5`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.5) from upstream, original repository.
 - Update `nginx` to 1.30.1. ([46f9171](https://github.com/slsfi/digital-edition-frontend-ng/commit/46f917146367f916c3531d734873b7f7b13b0e14))
 - Deps: update `@angular/cli` to 19.2.26 and `@angular/core` to 19.2.22. ([5ca3c4b](https://github.com/slsfi/digital-edition-frontend-ng/commit/5ca3c4b6ff4f731d9633030527a3a211c6f8e2d4))
 - Deps: update `express` to 4.22.2. ([5c358ff](https://github.com/slsfi/digital-edition-frontend-ng/commit/5c358ffa0081a866ffaf5f2afe73d2fb52ccd239))
@@ -1010,6 +1017,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.8.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.4-production.1...1.8.5-production.1
 [1.8.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.3-production.1...1.8.4-production.1
 [1.8.3-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.3...1.8.3-production.1
 [1.8.2-production.3]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.2...1.8.2-production.3
