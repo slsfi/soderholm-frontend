@@ -8,9 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [1.8.6-production.1] – 2026-06-04
+
 ### Changed
 
-- Update to base version [`1.8.6`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.6) from upstream, original repository.
+- Update to base version [`1.8.6`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/1.8.6) from upstream, original repository. ([dad3d1d](https://github.com/slsfi/soderholm-frontend/commit/dad3d1d47c9bc9a3e47d1c7e408dc70bc056ff8d))
 
 
 
@@ -1031,6 +1035,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[1.8.6-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.5-production.1...1.8.6-production.1
 [1.8.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.4-production.1...1.8.5-production.1
 [1.8.4-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.3-production.1...1.8.4-production.1
 [1.8.3-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.2-production.3...1.8.3-production.1
