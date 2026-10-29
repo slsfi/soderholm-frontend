@@ -276,13 +276,15 @@
   --fab-button-primary-background-color:   var(--custom-action-color);
   --fab-button-primary-icon-color:         var(--custom-action-color-contrast);
   --outline-button-color:                  var(--custom-action-color);
+
+  --font-stack-home-banner:        'Cormorant', var(--font-stack-tei);
 }
 
 ion-app[class][class] {
   --side-menu-background-color:                  #F2A341;
-  --top-menu-button-filter:                        none;
   --side-menu-hover-color:                       #538494;
   --side-menu-collection-title-background-color: #ddd8ce;
+  --top-menu-button-filter:                        none;
 }
 
 page-index[class][class] {
@@ -291,55 +293,42 @@ page-index[class][class] {
 
 /* Custom, project specific styles */
 
-/* Set background of actual side menu components to different than the nav element behind */
 ion-app[class][class] {
   main-side-menu,
   collection-side-menu {
-    background-color: var(--main-background-color);
+    > ul {
+      /* Set background of actual side menu components to different than the nav element behind */
+      background-color: var(--main-background-color);
+
+      &.secondary-menu-list li:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    /* Remove bottom border from last menu item on first level */
+    > ul > li:last-of-type span.label {
+      border-bottom: 0;
+    }
   }
 }
 
-/* Cookiebanner */
-a.cky-banner-element {
-  cursor: pointer;
-  text-decoration: underline;
-}
-#cky-consent,
-#cky-settings-popup {
-  font-family: var(--font-stack-app-base);
-}
-
 page-home {
-  .title-wrapper .banner-title {
-    background-color: transparent;
-    font-family: 'Cormorant', var(--font-stack-tei);
-    font-size: calc(2.675rem + 2.15vw);
+  --banner-title-font-size: calc(2.675rem + 2.15vw);
+  --landscape-pic-img-obj-position: left top;
 
+  .title-wrapper .banner-title {
     /* Add soft glow around title text on very narrow screens */
     @media screen and (max-width: 600px) {
       text-shadow: #ddd 1px 0 8px;
     }
   }
 
-  /* The top left of the banner image must remain in view */
-  .banner .landscape-picture img {
-    object-position: left top;
-  }
-
   .text-content div.site-presentation.markdown.markdown {
-    max-width: 600px;
-    text-align: left;
-
     blockquote {
       margin: 1em auto 2em auto;
       max-width: 400px;
       text-align: center;
     }
-  }
-
-  img[src$="#home-sls-logo"] {
-    display: block;
-    margin: 3em auto;
   }
 }
 
