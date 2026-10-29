@@ -147,20 +147,7 @@ export const config: Config = {
         1733, 1734, 1735, 1736]
     ]
   },
-  ebooks: [
-    {
-      title: "Dagböcker",
-      filename: "soderholm_dagbocker.epub",
-      externalFileURL: "",
-      coverURL: "assets/images/covers/Kerstin-Soderholms-dagbocker-cover-web.jpg",
-      downloadOptions: [
-        {
-          url: "https://www.sls.fi/publications/kerstin-soderholms-dagbocker/",
-          label: ""
-        }
-      ]
-    }
-  ],
+  ebooks: [],
   page: {
     about: {
       initialPageNode: "01"
@@ -354,18 +341,12 @@ export const config: Config = {
       },
       showTitles: true
     },
-    epub: {
-      showTOCButton: true,
-      showURNButton: false,
-      showViewOptionsButton: true
-    },
     facsimiles: {
       imageQuality: 2,
       showTitle: false
     },
     mainSideMenu: {
       items: {
-        home: false,
         about: true,
         ebooks: true,
         collections: true,
@@ -373,7 +354,8 @@ export const config: Config = {
         indexKeywords: false,
         indexPersons: true,
         indexPlaces: false,
-        indexWorks: false
+        indexWorks: false,
+        search: true
       },
       defaultExpanded: false
     },
@@ -386,22 +368,7 @@ export const config: Config = {
       showAboutButton: true,
       showContentButton: true,
       showElasticSearchButton: true,
-      showURNButton: false,
-      showLanguageButton: false,
-      showSiteLogo: true,
-      siteLogoDefaultImageURL: "assets/images/logo/SLS_logo_full_white_346x112.png",
-      siteLogoMobileImageURL: "assets/images/logo/SLS_logo_symbol_white_112x112.png",
-      siteLogoLinkURL: "https://www.sls.fi/",
-      siteLogoDimensions: {
-        default: {
-          height: 56,
-          width: 173
-        },
-        mobile: {
-          height: 56,
-          width: 56
-        }
-      }
+      showLanguageButton: false
     },
     variants: {
       showOpenLegendButton: true
