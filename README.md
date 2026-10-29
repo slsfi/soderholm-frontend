@@ -1,6 +1,6 @@
 # Production frontend of the Kerstin Söderholm website, soderholm.sls.fi
 
-This branch contains the production frontend app of the digital edition Kerstin Söderholm, [https://soderholm.sls.fi/][soderholm.sls.fi]. It is based on [`digital-edition-frontend-ng`][digital-edition-frontend-ng], the frontend app of the [SLS][SLS] platform for building digital edition web apps.
+This branch contains the production frontend app of the digital edition Kerstin Söderholm, <https://soderholm.sls.fi/>. It is based on [`digital-edition-frontend-ng`][digital-edition-frontend-ng], the frontend app of the [SLS][SLS] platform for building digital edition web apps.
 
 The app is built on [Angular][angular] and uses [Ionic][ionic] web components.
 
@@ -27,21 +27,22 @@ The app is built on [Angular][angular] and uses [Ionic][ionic] web components.
 
 ### Prerequisites
 
-1. Install [Node.js][node.js] which includes [npm][npm]. The app is compatible with Node `^20.19.0`, `^22.12.0` and `^24.0.0`. The app is currently configured to run on Node `22`. Check your Node version with:
+1. Install [Node.js][node.js] which includes [npm][npm]. The app requires Node `^24.15.0` and npm `>=11.16.0`; Docker and CI are configured to use Node `24`. Check both versions with:
 
 ```
 node --version
+npm --version
 ```
 
-2. Install project dependencies:
+2. [Clone][clone_repository] the repository locally and `cd` into the folder. On Windows you can use [GitHub Desktop][github_desktop] or [Git Bash][git_bash] (see [tutorial on Git Bash][gith_bash_tutorial]).
+
+3. Install project dependencies:
 
 ```
 npm install
 ```
 
 The local Angular CLI from `node_modules` is used by the npm scripts.
-
-3. [Clone][clone_repository] the repository locally and `cd` into the folder. On Windows you can use [GitHub Desktop][github_desktop] or [Git Bash][git_bash] (see [tutorial on Git Bash][gith_bash_tutorial]).
 
 ### Running locally
 
@@ -94,5 +95,4 @@ The platform consists of an [Angular frontend app][digital-edition-frontend-ng],
 [node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/get-npm
 [SLS]: https://www.sls.fi/en
-[soderholm.sls.fi]: https://soderholm.sls.fi/
 [TEI]: https://tei-c.org/
