@@ -11,9 +11,9 @@
 // TEI styles for semantic elements and icons.
 @use "TEI/tei-semantic-extras";
 // TEI styles for showing page breaks.
-@use "TEI/tei-page-breaks";
+// @use "TEI/tei-page-breaks";
 // TEI styles for showing paragraph/line numberings.
-@use "TEI/tei-paragraph-numbering";
+// @use "TEI/tei-paragraph-numbering";
 // TEI common styles, used by multiple collection components.
 @use "TEI/tei-common";
 // TEI styles for the collection title page.
@@ -25,8 +25,8 @@
 // TEI styles for the collection reading text component.
 @use "TEI/tei-readingtext";
 // TEI styles for the collection comments component.
-@use "TEI/tei-comments";
+// @use "TEI/tei-comments";
 // TEI styles for the collection manuscripts component.
 @use "TEI/tei-manuscripts";
 // TEI styles for the collection variants component.
-@use "TEI/tei-variants";
+// @use "TEI/tei-variants";
