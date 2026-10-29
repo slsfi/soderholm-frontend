@@ -18,8 +18,7 @@ export const config: Config = {
     },
     enableRouterLoadingBar: true,
     auth: {
-      enabled: false,
-      backendAuthBaseURL: "https://api.sls.fi/"
+      enabled: false
     },
     openGraphMetaTags: {
       enabled: true,
@@ -33,7 +32,7 @@ export const config: Config = {
     prebuild: {
       sitemap: true,
       staticCollectionMenus: true,
-      featureBasedRoutes: false
+      featureBasedRoutes: true
     },
     ssr: {
       trustProxyHops: 2,
@@ -360,8 +359,8 @@ export const config: Config = {
     mainSideMenu: {
       items: {
         about: true,
-        articles: true,
-        ebooks: true,
+        articles: false,
+        ebooks: false,
         collections: true,
         mediaCollections: false,
         indexKeywords: false,
@@ -369,7 +368,7 @@ export const config: Config = {
         indexPlaces: false,
         indexWorks: false,
         search: true,
-        cookiePolicy: false,
+        cookiePolicy: true,
         termsOfUse: false,
         privacyPolicy: false,
         accessibilityStatement: false,
