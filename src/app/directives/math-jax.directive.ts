@@ -1,8 +1,7 @@
-import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+import { Directive, ElementRef, afterRenderEffect, inject, input } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
 
 import { config } from '@config';
-import { isBrowser } from '@utility-functions';
 
 
 declare var MathJax: {
@@ -15,26 +14,28 @@ declare var MathJax: {
   standalone: true,
   selector: '[MathJax]'
 })
-export class MathJaxDirective implements OnChanges {
-  @Input('MathJax') mathJaxInput: string | SafeHtml | null = null;
+export class MathJaxDirective {
+  private elRef = inject(ElementRef);
 
-  private mathJaxEnabled: boolean = false;
+  readonly mathJaxInput = input<string | SafeHtml | null>(null, { alias: "MathJax" });
 
-  constructor(
-    private elRef: ElementRef
-  ) {
-    this.mathJaxEnabled = config.collections?.enableMathJax ?? false;
-  }
+  readonly mathJaxEnabled: boolean = config.collections?.enableMathJax ?? false;
 
-  ngOnChanges() {
-    if (isBrowser() && this.mathJaxEnabled && this.mathJaxInput) {
-      try {
-        // Tell the MathJax-processor to convert any TeX notated math in this.elRef.nativeElement
-        MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.elRef.nativeElement]);
-      } catch (e) {
-        console.error('MathJax error', e);
+  constructor() {
+    // Run MathJax only in the browser after rendering is complete,
+    // whenever mathJaxInput() changes.
+    afterRenderEffect({
+      write: () => {
+        if (this.mathJaxEnabled && this.mathJaxInput()) {
+          try {
+            // Tell the MathJax-processor to convert any TeX notated math in this.elRef.nativeElement
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, this.elRef.nativeElement]);
+          } catch (e) {
+            console.error('MathJax error', e);
+          }
+        }
       }
-    }
+    });
   }
 
 }

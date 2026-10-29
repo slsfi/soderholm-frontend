@@ -17,6 +17,10 @@ export const config: Config = {
       multilingualNamedEntityData: false
     },
     enableRouterLoadingBar: true,
+    auth: {
+      enabled: false,
+      backendAuthBaseURL: "https://api.sls.fi/"
+    },
     openGraphMetaTags: {
       enabled: true,
       image: {
@@ -28,12 +32,15 @@ export const config: Config = {
     },
     prebuild: {
       sitemap: true,
-      staticCollectionMenus: true
+      staticCollectionMenus: true,
+      featureBasedRoutes: false
     },
     ssr: {
+      trustProxyHops: 2,
       collectionSideMenu: false
     }
   },
+  articles: [],
   collections: {
     addTEIClassNames: false,
     replaceImageAssetsPaths: false,
@@ -151,6 +158,10 @@ export const config: Config = {
   page: {
     about: {
       initialPageNode: "01"
+    },
+    article: {
+      showTextDownloadButton: false,
+      showURNButton: false
     },
     elasticSearch: {
       enableFilters: true,
@@ -332,7 +343,8 @@ export const config: Config = {
       categoricalSortingSecondaryKey: ""
     },
     contentGrid: {
-      includeEbooks: true,
+      includeArticles: false,
+      includeEbooks: false,
       includeMediaCollection: false,
       mediaCollectionCoverURL: "",
       mediaCollectionCoverAltTexts: {
@@ -348,6 +360,7 @@ export const config: Config = {
     mainSideMenu: {
       items: {
         about: true,
+        articles: true,
         ebooks: true,
         collections: true,
         mediaCollections: false,
@@ -355,9 +368,14 @@ export const config: Config = {
         indexPersons: true,
         indexPlaces: false,
         indexWorks: false,
-        search: true
+        search: true,
+        cookiePolicy: false,
+        termsOfUse: false,
+        privacyPolicy: false,
+        accessibilityStatement: false,
       },
-      defaultExpanded: false
+      defaultExpanded: false,
+      ungroupArticles: false
     },
     manuscripts: {
       showTitle: false,

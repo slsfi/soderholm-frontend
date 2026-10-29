@@ -149,9 +149,9 @@
     --est-color:  #0a2a80;
     --fore-color: #113c49;
     --inl-color:  #812b5d;
-    --ms-color:   #69863a;
+    --ms-color:   #4a6322;
     --tit-color:  #5e1a06;
-    --var-color:  #803fa7;
+    --var-color:  #723397;
 
     --hititem-border-color:           var(--main-background-accent-color);
     --hititem-hover-background-color: #fff;
@@ -186,6 +186,10 @@
     --substantial-variant-background-color:     #fee0e2;
     --typographic-variant-background-color:     #f6e65b;
     --variant-background-color:                 #c5c5c5;
+  }
+
+  article-toc[class][class] {
+    --article-toc-background-color: var(--intro-toc-background-color, --main-background-color);
   }
 
 */

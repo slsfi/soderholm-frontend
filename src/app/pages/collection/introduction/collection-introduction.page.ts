@@ -1,15 +1,9 @@
-import { Component, ElementRef, Inject, LOCALE_ID, NgZone, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { Component, DestroyRef, ElementRef, LOCALE_ID, NgZone, OnDestroy, OnInit, Renderer2, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController, PopoverController } from '@ionic/angular';
-import { combineLatest, map, Subscription } from 'rxjs';
 
 import { config } from '@config';
-import { DownloadTextsModal } from '@modals/download-texts/download-texts.modal';
-import { IllustrationModal } from '@modals/illustration/illustration.modal';
-import { NamedEntityModal } from '@modals/named-entity/named-entity.modal';
-import { ReferenceDataModal } from '@modals/reference-data/reference-data.modal';
-import { Textsize } from '@models/textsize.model';
-import { ViewOptionsPopover } from '@popovers/view-options/view-options.popover';
 import { CollectionContentService } from '@services/collection-content.service';
 import { CollectionsService } from '@services/collections.service';
 import { HtmlParserService } from '@services/html-parser.service';
@@ -17,6 +11,7 @@ import { PlatformService } from '@services/platform.service';
 import { ScrollService } from '@services/scroll.service';
 import { TooltipService } from '@services/tooltip.service';
 import { ViewOptionsService } from '@services/view-options.service';
+import { RouteStateSourceService } from '@services/route-state-source.service';
 import { isBrowser } from '@utility-functions';
 
 
@@ -27,10 +22,34 @@ import { isBrowser } from '@utility-functions';
   standalone: false
 })
 export class CollectionIntroductionPage implements OnInit, OnDestroy {
+  private collectionContentService = inject(CollectionContentService);
+  private collectionsService = inject(CollectionsService);
+  private destroyRef = inject(DestroyRef);
+  private elementRef = inject(ElementRef);
+  private modalCtrl = inject(ModalController);
+  private ngZone = inject(NgZone);
+  private parserService = inject(HtmlParserService);
+  private platformService = inject(PlatformService);
+  private popoverCtrl = inject(PopoverController);
+  private renderer2 = inject(Renderer2);
+  private tooltipService = inject(TooltipService);
+  private route = inject(ActivatedRoute);
+  private routeStateSource = inject(RouteStateSourceService);
+  private router = inject(Router);
+  private scrollService = inject(ScrollService);
+  viewOptionsService = inject(ViewOptionsService);
+  private activeLocale = inject(LOCALE_ID);
+
+  hasSeparateIntroToc: boolean = config.page?.introduction?.hasSeparateTOC ?? false;
+  readonly replaceImageAssetsPaths: boolean = config.collections?.replaceImageAssetsPaths ?? true;
+  readonly showTextDownloadButton: boolean = config.page?.introduction?.showTextDownloadButton ?? false;
+  readonly showURNButton: boolean = config.page?.introduction?.showURNButton ?? true;
+  readonly showViewOptionsButton: boolean = config.page?.introduction?.showViewOptionsButton ?? true;
+  viewOptionsTogglesIntro: any = config.page?.introduction?.viewOptions ?? undefined;
+
   _activeComponent: boolean = true;
   collectionID: string = '';
   collectionLegacyId: string = '';
-  hasSeparateIntroToc: boolean = false;
   infoOverlayPosition: any = {
     bottom: 0 + 'px',
     left: -1500 + 'px'
@@ -43,16 +62,10 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   intervalTimerId: number = 0;
   mobileMode: boolean = false;
   pos: string | null = null;
-  replaceImageAssetsPaths: boolean = true;
   searchMatches: string[] = [];
-  showTextDownloadButton: boolean = false;
-  showURNButton: boolean = true;
-  showViewOptionsButton: boolean = true;
   text: string = '';
   textLoading: boolean = true;
   textMenu: string = '';
-  textsize: Textsize = Textsize.Small;
-  textsizeSubscription: Subscription | null = null;
   tocMenuOpen: boolean = false;
   toolTipMaxWidth: string | null = null;
   toolTipPosition: any = {
@@ -63,11 +76,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   toolTipScaleValue: number | null = null;
   toolTipText: string = '';
   tooltipVisible: boolean = false;
-  urlParametersSubscription: Subscription | null = null;
   userIsTouching: boolean = false;
-  viewOptionsTogglesIntro: any = {};
-
-  TextsizeEnum = Textsize;
 
   private unlistenClickEvents?: () => void;
   private unlistenKeyUpEnterEvents?: () => void;
@@ -75,30 +84,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   private unlistenMouseoutEvents?: () => void;
   private unlistenFirstTouchStartEvent?: () => void;
 
-  constructor(
-    private collectionContentService: CollectionContentService,
-    private collectionsService: CollectionsService,
-    private elementRef: ElementRef,
-    private modalCtrl: ModalController,
-    private ngZone: NgZone,
-    private parserService: HtmlParserService,
-    private platformService: PlatformService,
-    private popoverCtrl: PopoverController,
-    private renderer2: Renderer2,
-    private tooltipService: TooltipService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private scrollService: ScrollService,
-    public viewOptionsService: ViewOptionsService,
-    @Inject(LOCALE_ID) private activeLocale: string
-  ) {
-    this.hasSeparateIntroToc = config.page?.introduction?.hasSeparateTOC ?? false;
-    this.replaceImageAssetsPaths = config.collections?.replaceImageAssetsPaths ?? true;
-    this.showTextDownloadButton = config.page?.introduction?.showTextDownloadButton ?? false;
-    this.showURNButton = config.page?.introduction?.showURNButton ?? true;
-    this.showViewOptionsButton = config.page?.introduction?.showViewOptionsButton ?? true;
-    this.viewOptionsTogglesIntro = config.page?.introduction?.viewOptions ?? undefined;
-
+  constructor() {
     if (
       this.viewOptionsTogglesIntro === undefined ||
       this.viewOptionsTogglesIntro === null ||
@@ -128,17 +114,10 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   ngOnInit() {
     this.mobileMode = this.platformService.isMobile();
 
-    this.textsizeSubscription = this.viewOptionsService.getTextsize().subscribe(
-      (textsize: Textsize) => {
-        this.textsize = textsize;
-      }
-    );
-
-    this.urlParametersSubscription = combineLatest(
-      [this.route.params, this.route.queryParams]
-    ).pipe(
-      map(([params, queryParams]) => ({...params, ...queryParams}))
-    ).subscribe(routeParams => {
+    this.routeStateSource.get(this.route).pipe(
+      takeUntilDestroyed(this.destroyRef)
+    ).subscribe(({ params, queryParams }) => {
+      const routeParams = { ...params, ...queryParams };
       
       // Check if there is a text position in the route params
       // (comes from queryParams)
@@ -176,8 +155,6 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.urlParametersSubscription?.unsubscribe();
-    this.textsizeSubscription?.unsubscribe();
     this.unlistenClickEvents?.();
     this.unlistenKeyUpEnterEvents?.();
     this.unlistenMouseoverEvents?.();
@@ -210,21 +187,22 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
           // Find the introduction's table of contents in the text
           const pattern = /<div data-id="content">(.*?)<\/div>/s;
           const matches = textContent.match(pattern);
+
           if (matches && matches.length > 0) {
             // The introduction's table of contents was found,
             // copy it to this.textMenu and remove it from this.text
             this.textMenu = matches[1];
             textContent = textContent.replace(pattern, '');
-            if (!this.platformService.isMobile()) {
-              if (!this.tocMenuOpen) {
-                this.tocMenuOpen = true;
-              }
+
+            if (!this.mobileMode && !this.tocMenuOpen) {
+              this.tocMenuOpen = true;
             }
           } else {
             this.hasSeparateIntroToc = false;
           }
 
           this.text = this.parserService.insertSearchMatchTags(textContent, this.searchMatches);
+
           // Try to scroll to a position in the text or first search match
           if (this.pos) {
             this.scrollToPos();
@@ -378,13 +356,26 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
         let eventTarget = this.getEventTarget(event);
 
         // Modal trigger for person-, place- or workinfo and info overlay trigger for footnote.
-        if (eventTarget.classList.contains('tooltiptrigger') && eventTarget.hasAttribute('data-id')) {
+        if (
+          eventTarget.classList.contains('tooltiptrigger') &&
+          eventTarget.hasAttribute('data-id')
+        ) {
           this.ngZone.run(() => {
-            if (eventTarget.classList.contains('person') && this.viewOptionsService.show.personInfo) {
+            const viewOptions = this.viewOptionsService.show();
+            if (
+              eventTarget.classList.contains('person') &&
+              viewOptions.personInfo
+            ) {
               this.showSemanticDataObjectModal(eventTarget.getAttribute('data-id') || '', 'subject');
-            } else if (eventTarget.classList.contains('placeName') && this.viewOptionsService.show.placeInfo) {
+            } else if (
+              eventTarget.classList.contains('placeName') &&
+              viewOptions.placeInfo
+            ) {
               this.showSemanticDataObjectModal(eventTarget.getAttribute('data-id') || '', 'location');
-            } else if (eventTarget.classList.contains('title') && this.viewOptionsService.show.workInfo) {
+            } else if (
+              eventTarget.classList.contains('title') &&
+              viewOptions.workInfo
+            ) {
               this.showSemanticDataObjectModal(eventTarget.getAttribute('data-id') || '', 'work');
             } else if (eventTarget.classList.contains('ttFoot')) {
               this.showFootnoteInfoOverlay(eventTarget.getAttribute('data-id') || '', eventTarget);
@@ -577,23 +568,24 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
             eventTarget.hasAttribute('data-id')
           ) {
             this.ngZone.run(() => {
+              const show = this.viewOptionsService.show();
               if (
                 eventTarget.classList.contains('person') &&
-                this.viewOptionsService.show.personInfo
+                show.personInfo
               ) {
                 this.showSemanticDataObjectTooltip(
                   eventTarget.getAttribute('data-id'), 'person', eventTarget
                 );
               } else if (
                 eventTarget.classList.contains('placeName') &&
-                this.viewOptionsService.show.placeInfo
+                show.placeInfo
               ) {
                 this.showSemanticDataObjectTooltip(
                   eventTarget.getAttribute('data-id'), 'place', eventTarget
                 );
               } else if (
                 eventTarget.classList.contains('title') &&
-                this.viewOptionsService.show.workInfo
+                show.workInfo
               ) {
                 this.showSemanticDataObjectTooltip(
                   eventTarget.getAttribute('data-id'), 'work', eventTarget
@@ -818,6 +810,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   }
 
   async showSemanticDataObjectModal(id: string, type: string) {
+    const { NamedEntityModal } = await import('@modals/named-entity/named-entity.modal');
     const modal = await this.modalCtrl.create({
       component: NamedEntityModal,
       componentProps: { id, type }
@@ -827,6 +820,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   }
 
   async showIllustrationModal(imageNumber: string) {
+    const { IllustrationModal } = await import('@modals/illustration/illustration.modal');
     const modal = await this.modalCtrl.create({
       component: IllustrationModal,
       componentProps: { 'imageNumber': imageNumber }
@@ -837,6 +831,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
 
   async showViewOptionsPopover(event: any) {
     const toggles = this.viewOptionsTogglesIntro;
+    const { ViewOptionsPopover } = await import('@popovers/view-options/view-options.popover');
     const popover = await this.popoverCtrl.create({
       component: ViewOptionsPopover,
       componentProps: { toggles },
@@ -850,6 +845,7 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   }
 
   async showReference() {
+    const { ReferenceDataModal } = await import('@modals/reference-data/reference-data.modal');
     const modal = await this.modalCtrl.create({
       component: ReferenceDataModal,
       componentProps: { origin: 'page-introduction' }
@@ -859,9 +855,10 @@ export class CollectionIntroductionPage implements OnInit, OnDestroy {
   }
 
   async showDownloadModal() {
+    const { DownloadTextsModal } = await import('@modals/download-texts/download-texts.modal');
     const modal = await this.modalCtrl.create({
       component: DownloadTextsModal,
-      componentProps: { origin: 'page-introduction', textItemID: this.collectionID }
+      componentProps: { origin: 'page-introduction', collectionId: this.collectionID }
     });
 
     modal.present();

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="undefined">
   <file id="ngi18n" original="ng.template">
     <unit id="About.FootnotesBackToReference">
@@ -16,6 +17,60 @@
       <segment state="initial">
         <source>Sidans innehåll kunde inte laddas.</source>
         <target>Failed to load page content.</target>
+      </segment>
+    </unit>
+    <unit id="Account.ChangePasswordButton">
+      <segment state="initial">
+        <source>Ändra lösenord</source>
+        <target>Change password</target>
+      </segment>
+    </unit>
+    <unit id="Account.DeleteAccountInstruction">
+      <segment state="initial">
+        <source>Om du vill radera ditt konto, skicka ett meddelande från din kontoadress till <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;mailto:info@sls.fi&quot;&gt;" dispEnd="&lt;/a&gt;">info@sls.fi</pc> med rubriken ”SLS digitala utgåvor, radera konto”.</source>
+        <target>If you want to delete your account, send a message from your account email address to <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a href=&quot;mailto:info@sls.fi&quot;&gt;" dispEnd="&lt;/a&gt;">info@sls.fi</pc> with the subject ”SLS digital editions, delete account”.</target>
+      </segment>
+    </unit>
+    <unit id="Account.Description">
+      <segment state="initial">
+        <source>Du är inloggad.</source>
+        <target>You are logged in.</target>
+      </segment>
+    </unit>
+    <unit id="Account.DescriptionWithEmail">
+      <segment state="initial">
+        <source>Du är inloggad med e-postadressen</source>
+        <target>You are logged in with the email address</target>
+      </segment>
+    </unit>
+    <unit id="Account.LogoutButton">
+      <segment state="initial">
+        <source>Logga ut</source>
+        <target>Log out</target>
+      </segment>
+    </unit>
+    <unit id="Account.Title">
+      <segment state="initial">
+        <source>Användarkonto</source>
+        <target>User account</target>
+      </segment>
+    </unit>
+    <unit id="Article.Contents">
+      <segment state="initial">
+        <source>Innehåll</source>
+        <target>Contents</target>
+      </segment>
+    </unit>
+    <unit id="Article.LoadingError">
+      <segment state="initial">
+        <source>Artikeln kunde inte laddas.</source>
+        <target>Failed to load article.</target>
+      </segment>
+    </unit>
+    <unit id="Auth.OrDivider">
+      <segment state="initial">
+        <source>eller</source>
+        <target>or</target>
       </segment>
     </unit>
     <unit id="BasicActions.Cancel">
@@ -69,7 +124,7 @@
     <unit id="BasicActions.SearchEllipsis">
       <segment state="initial">
         <source>Sök ...</source>
-        <target>Search ...</target>
+        <target>Search...</target>
       </segment>
     </unit>
     <unit id="BasicActions.ShowMore">
@@ -333,7 +388,7 @@
     <unit id="Commentary.Manuscript.Title">
       <segment state="initial">
         <source>Manuskriptbeskrivning</source>
-        <target>Manuskriptbeskrivning</target>
+        <target>Manuscript description</target>
       </segment>
     </unit>
     <unit id="Commentary.Manuscript.Type">
@@ -486,6 +541,12 @@
         <target>Commentary to</target>
       </segment>
     </unit>
+    <unit id="ElasticSearch.FilterLoadingError">
+      <segment state="initial">
+        <source>Ett fel har uppstått när sökavgränsningarna skulle laddas.</source>
+        <target>An error occurred while loading filters.</target>
+      </segment>
+    </unit>
     <unit id="ElasticSearch.FilterResults">
       <segment state="initial">
         <source>Avgränsa sökningen</source>
@@ -510,28 +571,34 @@
         <target>Hide filters</target>
       </segment>
     </unit>
+    <unit id="ElasticSearch.Language">
+      <segment state="initial">
+        <source>Språk</source>
+        <target>Language</target>
+      </segment>
+    </unit>
     <unit id="ElasticSearch.LetterReceiverLocation">
       <segment state="initial">
         <source>Mottagarort (brev)</source>
-        <target>Reciever place</target>
+        <target>Addressee location (letters)</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.LetterReceiverName">
       <segment state="initial">
         <source>Mottagare (brev)</source>
-        <target>Reciever</target>
+        <target>Addressee (letters)</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.LetterSenderLocation">
       <segment state="initial">
         <source>Avsändarort (brev)</source>
-        <target>Sender place</target>
+        <target>Sender location (letters)</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.LetterSenderName">
       <segment state="initial">
         <source>Avsändare (brev)</source>
-        <target>Sender</target>
+        <target>Sender (letters)</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.LoadingError">
@@ -543,7 +610,7 @@
     <unit id="ElasticSearch.LoadingFilters">
       <segment state="initial">
         <source>Ett ögonblick, laddar sökavgränsningar ...</source>
-        <target>Just a moment, loading filters ...</target>
+        <target>Just a moment, loading filters...</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.NewestFirst">
@@ -648,6 +715,12 @@
         <target>Start by entering search terms or applying filters.</target>
       </segment>
     </unit>
+    <unit id="ElasticSearch.StartSearchInstructionNoFilters">
+      <segment state="initial">
+        <source>Börja söka genom att skriva in sökord.</source>
+        <target>Start by entering search terms.</target>
+      </segment>
+    </unit>
     <unit id="ElasticSearch.TimeRange">
       <segment state="initial">
         <source>Tidsperiod</source>
@@ -669,7 +742,7 @@
     <unit id="Facsimiles.ChangeFacsimile">
       <segment state="initial">
         <source>Byt faksimil</source>
-        <target>Select facsimile</target>
+        <target>Change facsimile</target>
       </segment>
     </unit>
     <unit id="Facsimiles.Error">
@@ -687,7 +760,7 @@
     <unit id="Facsimiles.Facsimile">
       <segment state="initial">
         <source>Faksimil</source>
-        <target>Facsimiles</target>
+        <target>Facsimile</target>
       </segment>
     </unit>
     <unit id="Facsimiles.Fullscreen">
@@ -754,6 +827,102 @@
       <segment state="initial">
         <source>Zooma ut</source>
         <target>Zoom out</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.BackToAccount">
+      <segment state="initial">
+        <source>Tillbaka till användarkonto</source>
+        <target>Back to account</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.BackToLogin">
+      <segment state="initial">
+        <source>Tillbaka till inloggning</source>
+        <target>Back to login</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.ChangeDescription">
+      <segment state="initial">
+        <source>Ange e-postadressen för ditt konto så skickar vi en länk för att ändra ditt lösenord.</source>
+        <target>Enter your account email address and we will send you a link to change your password.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.ChangeRequestFailed">
+      <segment state="initial">
+        <source>Begäran om lösenordsändring misslyckades. Försök igen senare.</source>
+        <target>Password change request failed. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.ChangeSubmitButton">
+      <segment state="initial">
+        <source>Skicka ändringslänk</source>
+        <target>Send change link</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.ChangeSuccess">
+      <segment state="initial">
+        <source>Om det finns ett konto för den angivna e-postadressen har en länk för att ändra lösenord skickats.</source>
+        <target>If an account exists for the email address, a password change link has been sent.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.ChangeTitle">
+      <segment state="initial">
+        <source>Ändra lösenord</source>
+        <target>Change password</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.Description">
+      <segment state="initial">
+        <source>Ange e-postadressen för ditt konto så skickar vi en länk för att återställa lösenordet.</source>
+        <target>Enter your account email address and we will send you a link to reset your password.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.EmailInvalid">
+      <segment state="initial">
+        <source>Ange en giltig e-postadress.</source>
+        <target>Enter a valid email address.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.EmailLabel">
+      <segment state="initial">
+        <source>E-postadress</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.EmailRequired">
+      <segment state="initial">
+        <source>Ange e-postadress.</source>
+        <target>Enter email address.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.InProgress">
+      <segment state="initial">
+        <source>Skickar länk ...</source>
+        <target>Sending link...</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.RequestFailed">
+      <segment state="initial">
+        <source>Begäran om återställning misslyckades. Försök igen senare.</source>
+        <target>Password reset request failed. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.SubmitButton">
+      <segment state="initial">
+        <source>Skicka återställningslänk</source>
+        <target>Send reset link</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.Success">
+      <segment state="initial">
+        <source>Om det finns ett konto för den angivna e-postadressen har en återställningslänk skickats.</source>
+        <target>If an account exists for the email address, a password reset link has been sent.</target>
+      </segment>
+    </unit>
+    <unit id="ForgotPassword.Title">
+      <segment state="initial">
+        <source>Glömt lösenordet?</source>
+        <target>Forgot your password?</target>
       </segment>
     </unit>
     <unit id="FullscreenImageViewer.ToggleDescription">
@@ -837,7 +1006,7 @@
     <unit id="Index.SearchPlaceholder">
       <segment state="initial">
         <source>Sök ...</source>
-        <target>Search ...</target>
+        <target>Search...</target>
       </segment>
     </unit>
     <unit id="Index.ShownRecords">
@@ -894,6 +1063,12 @@
         <target>Person categories</target>
       </segment>
     </unit>
+    <unit id="Language.Undefined">
+      <segment state="initial">
+        <source>odefinierat</source>
+        <target>undefined</target>
+      </segment>
+    </unit>
     <unit id="Legend.Legend">
       <segment state="initial">
         <source>Teckenförklaringar</source>
@@ -904,6 +1079,120 @@
       <segment state="initial">
         <source>Inga teckenförklaringar tillgängliga.</source>
         <target>No legend available.</target>
+      </segment>
+    </unit>
+    <unit id="Login.AccountNeededForAccess">
+      <segment state="initial">
+        <source>För att komma åt innehållet i den digitala utgåvan behöver du ett <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/register&apos;]&quot; [queryParams]=&quot;authRedirectNavigationQueryParams&quot;&gt;" dispEnd="&lt;/a&gt;">användarkonto</pc>.</source>
+        <target>To access the content of the digital edition, you need a <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/register&apos;]&quot; [queryParams]=&quot;authRedirectNavigationQueryParams&quot;&gt;" dispEnd="&lt;/a&gt;">user account</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Login.ConsentPrivacyOnly">
+      <segment state="initial">
+        <source>Genom att logga in godkänner du <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">dataskyddsbeskrivningen</pc>.</source>
+        <target>By logging in, you accept the <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">Privacy policy</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Login.ConsentTermsAndPrivacy">
+      <segment state="initial">
+        <source>Genom att logga in godkänner du <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">användarvillkoren</pc> och <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">dataskyddsbeskrivningen</pc>.</source>
+        <target>By logging in, you accept the <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">Terms of use</pc> and <pc id="1" equivStart="START_LINK_1" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">Privacy policy</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Login.ConsentTermsOnly">
+      <segment state="initial">
+        <source>Genom att logga in godkänner du <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">användarvillkoren</pc>.</source>
+        <target>By logging in, you accept the <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot;&gt;" dispEnd="&lt;/a&gt;">Terms of use</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Login.CreateAccount">
+      <segment state="initial">
+        <source>Skapa ett användarkonto</source>
+        <target>Create a user account</target>
+      </segment>
+    </unit>
+    <unit id="Login.EmailInvalid">
+      <segment state="initial">
+        <source>Ange en giltig e-postadress.</source>
+        <target>Enter a valid email address.</target>
+      </segment>
+    </unit>
+    <unit id="Login.EmailLabel">
+      <segment state="initial">
+        <source>E-postadress</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="Login.EmailNotVerified">
+      <segment state="initial">
+        <source>Du måste verifiera din e-postadress innan du kan logga in. Kontrollera din inkorg för ett e-postmeddelande med en verifieringslänk. Om länken har gått ut eller om du inte har fått något e-postmeddelande måste du registrera dig igen.</source>
+        <target>You must verify your email address before you can log in. Check your inbox for an email with a verification link. If the link has expired or you did not receive an email, you must register again.</target>
+      </segment>
+    </unit>
+    <unit id="Login.EmailRequired">
+      <segment state="initial">
+        <source>Ange e-postadress.</source>
+        <target>Enter email address.</target>
+      </segment>
+    </unit>
+    <unit id="Login.ForgotPassword">
+      <segment state="initial">
+        <source>Glömt lösenordet?</source>
+        <target>Forgot password?</target>
+      </segment>
+    </unit>
+    <unit id="Login.InProgress">
+      <segment state="initial">
+        <source>Loggar in ...</source>
+        <target>Logging in...</target>
+      </segment>
+    </unit>
+    <unit id="Login.InvalidCredentials">
+      <segment state="initial">
+        <source>Fel e-postadress eller lösenord.</source>
+        <target>Invalid email address or password.</target>
+      </segment>
+    </unit>
+    <unit id="Login.NoCredentials">
+      <segment state="initial">
+        <source>Ange e-postadress och lösenord.</source>
+        <target>Enter your email address and password.</target>
+      </segment>
+    </unit>
+    <unit id="Login.PasswordLabel">
+      <segment state="initial">
+        <source>Lösenord</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="Login.RequestFailed">
+      <segment state="initial">
+        <source>Inloggningen misslyckades. Försök igen senare.</source>
+        <target>Failed to log in. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="Login.SubmitButton">
+      <segment state="initial">
+        <source>Logga in</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="Login.Title">
+      <segment state="initial">
+        <source>Logga in</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="MainSideMenu.AccessibilityStatement">
+      <segment state="initial">
+        <source>Tillgänglighetsutlåtande</source>
+        <target>Accessibility statement</target>
+      </segment>
+    </unit>
+    <unit id="MainSideMenu.Account">
+      <segment state="initial">
+        <source>Användarkonto</source>
+        <target>User account</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.AriaLabel">
@@ -942,6 +1231,12 @@
         <target>Content 5</target>
       </segment>
     </unit>
+    <unit id="MainSideMenu.CookiePolicy">
+      <segment state="initial">
+        <source>Kakor och besöksstatistik</source>
+        <target>Cookies and visitor statistics</target>
+      </segment>
+    </unit>
     <unit id="MainSideMenu.Ebooks">
       <segment state="initial">
         <source>E-böcker</source>
@@ -978,16 +1273,34 @@
         <target>Index of works</target>
       </segment>
     </unit>
+    <unit id="MainSideMenu.Login">
+      <segment state="initial">
+        <source>Logga in</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
     <unit id="MainSideMenu.MediaCollections">
       <segment state="initial">
         <source>Bildbank</source>
         <target>Media collections</target>
       </segment>
     </unit>
+    <unit id="MainSideMenu.PrivacyPolicy">
+      <segment state="initial">
+        <source>Dataskyddsbeskrivning</source>
+        <target>Privacy policy</target>
+      </segment>
+    </unit>
     <unit id="MainSideMenu.Search">
       <segment state="initial">
         <source>Sök i utgåvan</source>
         <target>Search the edition</target>
+      </segment>
+    </unit>
+    <unit id="MainSideMenu.TermsOfUse">
+      <segment state="initial">
+        <source>Användarvillkor</source>
+        <target>Terms of use</target>
       </segment>
     </unit>
     <unit id="Manuscripts.ChangeManuscript">
@@ -1029,7 +1342,7 @@
     <unit id="Manuscripts.ShowNormalized">
       <segment state="initial">
         <source>Visa ändringar inarbetade</source>
-        <target>Visa ändringar inarbetade</target>
+        <target>Show all revisions applied</target>
       </segment>
     </unit>
     <unit id="MediaCollection.AllMediaCollections">
@@ -1094,7 +1407,7 @@
     </unit>
     <unit id="Metadata.ArchiveInfo">
       <segment state="initial">
-        <source>Arkivkälla för faksimilet</source>
+        <source>Arkivkälla</source>
         <target>Archive</target>
       </segment>
     </unit>
@@ -1118,7 +1431,7 @@
     </unit>
     <unit id="Metadata.ExternalUrl">
       <segment state="initial">
-        <source>Extern länk för faksimilet</source>
+        <source>Extern länk</source>
         <target>Link</target>
       </segment>
     </unit>
@@ -1134,16 +1447,58 @@
         <target>Facsimiles</target>
       </segment>
     </unit>
-    <unit id="Metadata.FacsimileTitle">
+    <unit id="Metadata.FacsimileSummary">
       <segment state="initial">
-        <source>Faksimilets titel</source>
-        <target>Facsimile title</target>
+        <source>Faksimilinfo</source>
+        <target>Facsimile info</target>
       </segment>
     </unit>
     <unit id="Metadata.ImageNumberInfo">
       <segment state="initial">
-        <source>Bildernas nummer i digitalarkivet</source>
+        <source>Bildernas nummer <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>i digitalarkivet</source>
         <target>Image number info</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Keywords">
+      <segment state="initial">
+        <source>Ämnesord</source>
+        <target>Keywords</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Language">
+      <segment state="initial">
+        <source>Språk</source>
+        <target>Language</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Licence">
+      <segment state="initial">
+        <source>Licens</source>
+        <target>Licence</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.LicenceEncoding">
+      <segment state="initial">
+        <source>Licens för TEI-filen</source>
+        <target>Licence for the TEI-file</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.LicenceWork">
+      <segment state="initial">
+        <source>Licens för verket</source>
+        <target>Licens for the work</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Manuscript">
+      <segment state="initial">
+        <source>Manuskript</source>
+        <target>Manuscript</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Manuscripts">
+      <segment state="initial">
+        <source>Manuskript</source>
+        <target>Manuscripts</target>
       </segment>
     </unit>
     <unit id="Metadata.Metadata">
@@ -1154,7 +1509,7 @@
     </unit>
     <unit id="Metadata.None">
       <segment state="initial">
-        <source>Ingen metadata tillgänglig.</source>
+        <source>Inga metadata tillgängliga.</source>
         <target>No metadata available.</target>
       </segment>
     </unit>
@@ -1164,16 +1519,64 @@
         <target>Number of images</target>
       </segment>
     </unit>
+    <unit id="Metadata.OrigDate">
+      <segment state="initial">
+        <source>Datering</source>
+        <target>Date</target>
+      </segment>
+    </unit>
     <unit id="Metadata.OriginalLanguage">
       <segment state="initial">
         <source>Originalspråk</source>
         <target>Original language</target>
       </segment>
     </unit>
+    <unit id="Metadata.Overview">
+      <segment state="initial">
+        <source>Översikt</source>
+        <target>Overview</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Persons">
+      <segment state="initial">
+        <source>Personer</source>
+        <target>Persons</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.PhysDescription">
+      <segment state="initial">
+        <source>Fysisk beskrivning</source>
+        <target>Physical description</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.PhysDimensions">
+      <segment state="initial">
+        <source>Fysiska mått</source>
+        <target>Dimensions</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Places">
+      <segment state="initial">
+        <source>Orter</source>
+        <target>Places</target>
+      </segment>
+    </unit>
     <unit id="Metadata.PublicationDate">
       <segment state="initial">
         <source>Datering</source>
         <target>Date</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.PublicationGenre">
+      <segment state="initial">
+        <source>Genre</source>
+        <target>Genre</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.PublicationLanguage">
+      <segment state="initial">
+        <source>Språk</source>
+        <target>Language</target>
       </segment>
     </unit>
     <unit id="Metadata.PublicationSubtitle">
@@ -1206,6 +1609,18 @@
         <target>Recipients</target>
       </segment>
     </unit>
+    <unit id="Metadata.Responsibility">
+      <segment state="initial">
+        <source>Bearbetning</source>
+        <target>Preparation</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Rights">
+      <segment state="initial">
+        <source>Rättigheter</source>
+        <target>Rights</target>
+      </segment>
+    </unit>
     <unit id="Metadata.Sender">
       <segment state="initial">
         <source>Avsändare</source>
@@ -1218,6 +1633,18 @@
         <target>Senders</target>
       </segment>
     </unit>
+    <unit id="Metadata.SourceArchive">
+      <segment state="initial">
+        <source>Arkivkälla</source>
+        <target>Source archive</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.SourceBibl">
+      <segment state="initial">
+        <source>Bibliografisk källa</source>
+        <target>Bibliographic source</target>
+      </segment>
+    </unit>
     <unit id="Metadata.Translation">
       <segment state="initial">
         <source>Översättning</source>
@@ -1228,6 +1655,36 @@
       <segment state="initial">
         <source>Översättningar</source>
         <target>Translations</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Untitled">
+      <segment state="initial">
+        <source>[saknar titel]</source>
+        <target>[untitled]</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Variant">
+      <segment state="initial">
+        <source>Tryckt variant</source>
+        <target>Printed variant</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.VariantBaseText">
+      <segment state="initial">
+        <source>Grundtext</source>
+        <target>Base text</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.Variants">
+      <segment state="initial">
+        <source>Tryckta varianter</source>
+        <target>Printed variants</target>
+      </segment>
+    </unit>
+    <unit id="Metadata.VariantText">
+      <segment state="initial">
+        <source>Variant</source>
+        <target>Variant</target>
       </segment>
     </unit>
     <unit id="NamedEntity.Articles">
@@ -1404,6 +1861,30 @@
         <target>Something went wrong. We can’t find the page you tried to access. You can go back to the previous page using the browser’s back-button, or you can try to correct the web address in the browser’s address bar.</target>
       </segment>
     </unit>
+    <unit id="Password.DoesNotMatch">
+      <segment state="initial">
+        <source>Lösenorden matchar inte.</source>
+        <target>The passwords do not match.</target>
+      </segment>
+    </unit>
+    <unit id="Password.RequirementsError">
+      <segment state="initial">
+        <source>Lösenordet uppfyller inte kraven ovan.</source>
+        <target>The password does not meet the requirements above.</target>
+      </segment>
+    </unit>
+    <unit id="Password.RequirementsHint">
+      <segment state="initial">
+        <source><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Lösenordet måste:</pc><pc id="1" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;"><pc id="2" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">vara minst 12 tecken långt</pc><pc id="3" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">innehålla både små och stora bokstäver</pc><pc id="4" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">innehålla minst en siffra eller ett specialtecken</pc></pc></source>
+        <target><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">The password must:</pc><pc id="1" equivStart="START_UNORDERED_LIST" equivEnd="CLOSE_UNORDERED_LIST" type="other" dispStart="&lt;ul&gt;" dispEnd="&lt;/ul&gt;"><pc id="2" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">be at least 12 characters in length</pc><pc id="3" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">contain both lowercase and uppercase letters</pc><pc id="4" equivStart="START_LIST_ITEM" equivEnd="CLOSE_LIST_ITEM" type="other" dispStart="&lt;li&gt;" dispEnd="&lt;/li&gt;">contain at least one digit or one special character</pc></pc></target>
+      </segment>
+    </unit>
+    <unit id="Password.TooShort">
+      <segment state="initial">
+        <source>Lösenordet måste vara minst 12 tecken långt.</source>
+        <target>The password must be at least 12 characters long.</target>
+      </segment>
+    </unit>
     <unit id="PdfViewer.DownloadPdf">
       <segment state="initial">
         <source>ladda ner PDF</source>
@@ -1461,61 +1942,361 @@
     <unit id="Reference.Permalink">
       <segment state="initial">
         <source>Beständig webbadress</source>
-        <target>Permalink</target>
+        <target>Permanent URL</target>
       </segment>
     </unit>
     <unit id="Reference.Refer">
       <segment state="initial">
         <source>Hänvisa</source>
-        <target>Refer</target>
+        <target>Cite</target>
       </segment>
     </unit>
     <unit id="Reference.Reference">
       <segment state="initial">
         <source>Källhänvisning</source>
-        <target>Reference</target>
+        <target>How to cite</target>
+      </segment>
+    </unit>
+    <unit id="Reference.ReferToArticle">
+      <segment state="initial">
+        <source>Hänvisa till denna artikel</source>
+        <target>Cite this article</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToCollection">
       <segment state="initial">
         <source>Hänvisa till denna delutgåva</source>
-        <target>Refer to this edition</target>
+        <target>Cite this edition</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToEbook">
       <segment state="initial">
         <source>Hänvisa till denna text</source>
-        <target>Refer to this text</target>
+        <target>Cite this text</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToForeword">
       <segment state="initial">
         <source>Hänvisa till detta förord</source>
-        <target>Refer to this foreword</target>
+        <target>Cite this foreword</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToIntroduction">
       <segment state="initial">
         <source>Hänvisa till denna inledning</source>
-        <target>Refer to this introduction</target>
+        <target>Cite this introduction</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToMediaCollection">
       <segment state="initial">
         <source>Hänvisa till denna bildsamling</source>
-        <target>Refer to this media collection</target>
+        <target>Cite this media collection</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToReadingText">
       <segment state="initial">
         <source>Hänvisa till denna lästext</source>
-        <target>Refer to this text</target>
+        <target>Cite this text</target>
       </segment>
     </unit>
     <unit id="Reference.ReferToThisPage">
       <segment state="initial">
         <source>Hänvisa till denna sida</source>
-        <target>Refer to this page</target>
+        <target>Cite this page</target>
+      </segment>
+    </unit>
+    <unit id="Register.AcceptPrivacyCheckbox">
+      <segment state="initial">
+        <source>Jag accepterar dataskyddsbeskrivningen.</source>
+        <target>I accept the Privacy policy.</target>
+      </segment>
+    </unit>
+    <unit id="Register.AcceptPrivacyRequired">
+      <segment state="initial">
+        <source>Du måste acceptera dataskyddsbeskrivningen.</source>
+        <target>You must accept the Privacy policy.</target>
+      </segment>
+    </unit>
+    <unit id="Register.AcceptTermsCheckbox">
+      <segment state="initial">
+        <source>Jag accepterar användarvillkoren.</source>
+        <target>I accept the Terms of use.</target>
+      </segment>
+    </unit>
+    <unit id="Register.AcceptTermsRequired">
+      <segment state="initial">
+        <source>Du måste acceptera användarvillkoren.</source>
+        <target>You must accept the Terms of use.</target>
+      </segment>
+    </unit>
+    <unit id="Register.AccountSectionHeading">
+      <segment state="initial">
+        <source>Kontouppgifter</source>
+        <target>Account details</target>
+      </segment>
+    </unit>
+    <unit id="Register.BackToLogin">
+      <segment state="initial">
+        <source>Tillbaka till inloggning</source>
+        <target>Back to login</target>
+      </segment>
+    </unit>
+    <unit id="Register.CountryLabel">
+      <segment state="initial">
+        <source>Bosättningsland</source>
+        <target>Country of residence</target>
+      </segment>
+    </unit>
+    <unit id="Register.CountryPlaceholder">
+      <segment state="initial">
+        <source>Välj land</source>
+        <target>Select country</target>
+      </segment>
+    </unit>
+    <unit id="Register.Description">
+      <segment state="initial">
+        <source>Ange namn, e-postadress och lösenord samt <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>godkänn villkoren för att skapa ett konto.</source>
+        <target>Enter your name, email address and a password and <ph id="0" equiv="LINE_BREAK" type="fmt" disp="&lt;br&gt;"/>accept the terms to create an account.</target>
+      </segment>
+    </unit>
+    <unit id="Register.EmailInvalid">
+      <segment state="initial">
+        <source>Ange en giltig e-postadress.</source>
+        <target>Enter a valid email address.</target>
+      </segment>
+    </unit>
+    <unit id="Register.EmailLabel">
+      <segment state="initial">
+        <source>E-postadress</source>
+        <target>Email address</target>
+      </segment>
+    </unit>
+    <unit id="Register.EmailRequired">
+      <segment state="initial">
+        <source>Ange e-postadress.</source>
+        <target>Enter email address.</target>
+      </segment>
+    </unit>
+    <unit id="Register.InProgress">
+      <segment state="initial">
+        <source>Skapar konto ...</source>
+        <target>Creating account...</target>
+      </segment>
+    </unit>
+    <unit id="Register.IntendedUsageEducational">
+      <segment state="initial">
+        <source>Pedagogiska</source>
+        <target>Educational</target>
+      </segment>
+    </unit>
+    <unit id="Register.IntendedUsageLabel">
+      <segment state="initial">
+        <source>Ändamål</source>
+        <target>Purpose</target>
+      </segment>
+    </unit>
+    <unit id="Register.IntendedUsagePersonal">
+      <segment state="initial">
+        <source>Personliga</source>
+        <target>Personal</target>
+      </segment>
+    </unit>
+    <unit id="Register.IntendedUsagePlaceholder">
+      <segment state="initial">
+        <source>Välj ett eller flera ändamål</source>
+        <target>Select one or more purposes</target>
+      </segment>
+    </unit>
+    <unit id="Register.IntendedUsageScholarly">
+      <segment state="initial">
+        <source>Vetenskapliga</source>
+        <target>Scholarly</target>
+      </segment>
+    </unit>
+    <unit id="Register.LegalSectionHeading">
+      <segment state="initial">
+        <source>Samtycke och villkor</source>
+        <target>Consent and terms</target>
+      </segment>
+    </unit>
+    <unit id="Register.NameLabel">
+      <segment state="initial">
+        <source>Förnamn och efternamn</source>
+        <target>First and last name</target>
+      </segment>
+    </unit>
+    <unit id="Register.NameRequired">
+      <segment state="initial">
+        <source>Ange förnamn och efternamn.</source>
+        <target>Enter first and last name.</target>
+      </segment>
+    </unit>
+    <unit id="Register.NoCredentials">
+      <segment state="initial">
+        <source>Ange förnamn och efternamn, e-postadress och lösenord.</source>
+        <target>Enter first and last name, email address, and password.</target>
+      </segment>
+    </unit>
+    <unit id="Register.OptionalSectionHeading">
+      <segment state="initial">
+        <source>Ytterligare information (valfritt)</source>
+        <target>Additional information (optional)</target>
+      </segment>
+    </unit>
+    <unit id="Register.PasswordLabel">
+      <segment state="initial">
+        <source>Lösenord</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="Register.PrivacyIntro">
+      <segment state="initial">
+        <source>Vi behandlar dina personuppgifter för att skapa och administrera ditt användarkonto.</source>
+        <target>We process your personal data to create and manage your user account.</target>
+      </segment>
+    </unit>
+    <unit id="Register.PrivacyLink">
+      <segment state="initial">
+        <source>Mer information finns i <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot; target=&quot;_blank&quot;&gt;" dispEnd="&lt;/a&gt;">dataskyddsbeskrivningen</pc>.</source>
+        <target>You can find more information in the <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/privacy-policy&apos;]&quot; target=&quot;_blank&quot;&gt;" dispEnd="&lt;/a&gt;">Privacy policy</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Register.PrivacySummary">
+      <segment state="initial">
+        <source><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Vi behandlar ditt namn och din e-postadress för att skapa och administrera ditt användar­konto samt för att ge dig tillgång till den digitala utgåvan. Dina person­uppgifter lagras på servrar i Finland och sparas endast så länge det är nödvändigt för dessa ändamål.</pc></source>
+        <target><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">We processes your name and email address to create and manage your user account and to provide access to the digital edition. Your personal data is stored on servers in Finland and is retained only for as long as necessary for these purposes.</pc></target>
+      </segment>
+    </unit>
+    <unit id="Register.PrivacySummaryHeading">
+      <segment state="initial">
+        <source>Sammanfattning av dataskyddsbeskrivningen</source>
+        <target>Summary of the Privacy policy</target>
+      </segment>
+    </unit>
+    <unit id="Register.RepeatPasswordLabel">
+      <segment state="initial">
+        <source>Upprepa lösenordet</source>
+        <target>Confirm email address</target>
+      </segment>
+    </unit>
+    <unit id="Register.RequestFailed">
+      <segment state="initial">
+        <source>Kontot kunde inte skapas. Försök igen senare.</source>
+        <target>The account could not be created. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="Register.SubmitButton">
+      <segment state="initial">
+        <source>Skapa konto</source>
+        <target>Create account</target>
+      </segment>
+    </unit>
+    <unit id="Register.Success">
+      <segment state="initial">
+        <source>Kontot har skapats. Kontrollera din inkorg och verifiera e-postadressen innan du loggar in.</source>
+        <target>Your account has been created. Check your inbox and verify your email address before logging in.</target>
+      </segment>
+    </unit>
+    <unit id="Register.TermsIntro">
+      <segment state="initial">
+        <source>Användarkontot ger dig tillgång till upphovsrättsligt skyddat material som får användas endast för privata, pedagogiska och vetenskapliga ändamål.</source>
+        <target>The user account gives you access to copyright-protected material, which may only be used for personal, educational, and scholarly purposes.</target>
+      </segment>
+    </unit>
+    <unit id="Register.TermsLink">
+      <segment state="initial">
+        <source>Fullständiga villkor finns i <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot; target=&quot;_blank&quot;&gt;" dispEnd="&lt;/a&gt;">användarvillkoren</pc>.</source>
+        <target>The full terms and conditions are set out in the <pc id="0" equivStart="START_LINK" equivEnd="CLOSE_LINK" type="link" dispStart="&lt;a [routerLink]=&quot;[&apos;/terms&apos;]&quot; target=&quot;_blank&quot;&gt;" dispEnd="&lt;/a&gt;">Terms of use</pc>.</target>
+      </segment>
+    </unit>
+    <unit id="Register.TermsSummary">
+      <segment state="initial">
+        <source><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Denna digitala utgåva tillgängliggör upphovs­rättsligt skyddat material. Materialet publiceras på nätet med tillstånd av rätts­innehavarna.</pc><pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Utgåvan får användas för <pc id="2" equivStart="START_BOLD_TEXT" equivEnd="CLOSE_BOLD_TEXT" type="fmt" dispStart="&lt;b&gt;" dispEnd="&lt;/b&gt;">privata, pedagogiska och veten­skapliga ändamål</pc>. Du får läsa, studera och utforska innehållet samt citera kortare utdrag i den omfattning som är tillåten enligt lag, under förut­sättning att du anger källan. Text- och data­utvinning på materialet är tillåten endast för vetenskaplig forskning.</pc><pc id="3" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">Det är inte tillåtet att kopiera, dela, återpublicera eller göra texterna eller bilderna tillgängliga på andra plattformar eller tjänster – inte ens för icke-kommersiella ändamål. Materialet får inte heller användas i kommersiellt syfte.</pc></source>
+        <target><pc id="0" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">This digital edition makes copyright-protected material available. The material is published online with the permission of the rights holders.</pc><pc id="1" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">The edition may be used for <pc id="2" equivStart="START_BOLD_TEXT" equivEnd="CLOSE_BOLD_TEXT" type="fmt" dispStart="&lt;b&gt;" dispEnd="&lt;/b&gt;">personal, educational, and scholarly purposes</pc>. You may read, study, and explore the content, and quote short passages where quotation is permitted by law, provided that the source is cited. Text and data mining of the material is permitted only for purposes of scholarly research.</pc><pc id="3" equivStart="START_PARAGRAPH" equivEnd="CLOSE_PARAGRAPH" type="other" dispStart="&lt;p&gt;" dispEnd="&lt;/p&gt;">It is not permitted to copy, share, republish, or otherwise make the texts or images available on other platforms or services – not even for non-commercial purposes. The material may not be used for commercial purposes.</pc></target>
+      </segment>
+    </unit>
+    <unit id="Register.TermsSummaryHeading">
+      <segment state="initial">
+        <source>Sammanfattning av användarvillkoren</source>
+        <target>Summary of the Terms of use</target>
+      </segment>
+    </unit>
+    <unit id="Register.Title">
+      <segment state="initial">
+        <source>Skapa användarkonto</source>
+        <target>Create user account</target>
+      </segment>
+    </unit>
+    <unit id="Register.UserAlreadyExists">
+      <segment state="initial">
+        <source>Det finns redan ett verifierat konto med den här e-postadressen.</source>
+        <target>A verified account with this email address already exists.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.BackToLogin">
+      <segment state="initial">
+        <source>Tillbaka till inloggning</source>
+        <target>Back to login</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.Description">
+      <segment state="initial">
+        <source>Ange ett nytt lösenord för ditt konto.</source>
+        <target>Enter a new password for your account.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.InProgress">
+      <segment state="initial">
+        <source>Sparar lösenord ...</source>
+        <target>Saving password...</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.InvalidLink">
+      <segment state="initial">
+        <source>Länken för att byta lösenord är ogiltig eller har löpt ut. Du måste beställa en ny länk för att byta lösenord.</source>
+        <target>The password reset link is invalid or has expired. You must request a new link to change the password.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.NoCredentials">
+      <segment state="initial">
+        <source>Ange ett nytt lösenord.</source>
+        <target>Enter a new password.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.PasswordLabel">
+      <segment state="initial">
+        <source>Nytt lösenord</source>
+        <target>New password</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.RepeatPasswordLabel">
+      <segment state="initial">
+        <source>Upprepa nytt lösenord</source>
+        <target>Repeat new password</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.RequestFailed">
+      <segment state="initial">
+        <source>Lösenordet kunde inte sparas. Försök igen senare.</source>
+        <target>Failed to save password. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.SubmitButton">
+      <segment state="initial">
+        <source>Spara nytt lösenord</source>
+        <target>Save new password</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.Success">
+      <segment state="initial">
+        <source>Lösenordet har sparats. Du kan nu logga in med ditt nya lösenord.</source>
+        <target>Your password has been saved. You can now log in with your new password.</target>
+      </segment>
+    </unit>
+    <unit id="ResetPassword.Title">
+      <segment state="initial">
+        <source>Nytt lösenord</source>
+        <target>New password</target>
       </segment>
     </unit>
     <unit id="Site.MetaDescription.Home">
@@ -1534,6 +2315,18 @@
       <segment state="initial">
         <source>Webbplatsens titel</source>
         <target>Website title</target>
+      </segment>
+    </unit>
+    <unit id="TextChanger.NextLabel">
+      <segment state="initial">
+        <source>Följande text</source>
+        <target>Next text</target>
+      </segment>
+    </unit>
+    <unit id="TextChanger.PrevLabel">
+      <segment state="initial">
+        <source>Föregående text</source>
+        <target>Previous text</target>
       </segment>
     </unit>
     <unit id="TopMenu.About">
@@ -1558,6 +2351,18 @@
       <segment state="initial">
         <source>Innehåll</source>
         <target>Content</target>
+      </segment>
+    </unit>
+    <unit id="TopMenu.Login">
+      <segment state="initial">
+        <source>Logga in</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="TopMenu.Logout">
+      <segment state="initial">
+        <source>Logga ut</source>
+        <target>Log out</target>
       </segment>
     </unit>
     <unit id="TopMenu.Menu">
@@ -1630,6 +2435,42 @@
       <segment state="initial">
         <source>Variantkategori</source>
         <target>Variant category</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.BackToLogin">
+      <segment state="initial">
+        <source>Till inloggning</source>
+        <target>Go to login</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.InvalidLink">
+      <segment state="initial">
+        <source>Verifieringslänken är ogiltig eller har löpt ut.</source>
+        <target>The verification link is invalid or has expired.</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.RequestFailed">
+      <segment state="initial">
+        <source>Verifieringen misslyckades. Försök igen senare.</source>
+        <target>Email verification failed. Please try again later.</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.Success">
+      <segment state="initial">
+        <source>Din e-postadress har verifierats. Du kan nu logga in på ditt konto.</source>
+        <target>Your email address has been verified. You can now log in to your account.</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.Title">
+      <segment state="initial">
+        <source>Verifiera e-postadress</source>
+        <target>Verify email address</target>
+      </segment>
+    </unit>
+    <unit id="VerifyEmail.Verifying">
+      <segment state="initial">
+        <source>Verifierar din e-postadress ...</source>
+        <target>Verifying your email address...</target>
       </segment>
     </unit>
     <unit id="ViewOptions.Abbreviation">

@@ -149,6 +149,18 @@ export function isBrowser(): boolean {
 
 
 /**
+ * Parses an app-relative URL against a dummy origin.
+ */
+export function parseRelativeUrl(url: string): URL | null {
+  try {
+    return new URL(url, 'http://localhost');
+  } catch {
+    return null;
+  }
+}
+
+
+/**
  * Returns true if the given object is empty, i.e. has no properties, else false.
  */
 export function isEmptyObject(obj: any) {
@@ -318,4 +330,27 @@ export function splitFilename(filename: string): { name: string; extension: stri
   const name = filename.slice(0, lastDotIndex);
   const extension = filename.slice(lastDotIndex + 1);
   return { name, extension };
+}
+
+
+/**
+ * Detects the “File not found” placeholder page content returned by the
+ * content API.
+ *
+ * Some endpoints return a minimal HTML document whose body includes
+ * `<body>File not found</body>` or is exactly `File not found` when the
+ * requested resource is missing. This helper provides a  null/undefined-safe
+ * check before trying to render or parse the HTML.
+ *
+ * Notes:
+ * - Uses a simple substring check (no DOM parsing) for performance.
+ * - The match is **case- and whitespace-sensitive**. If the backend’s
+ *   formatting changes, consider a more tolerant check (e.g., regex).
+ *
+ * @param s Raw HTML returned by the API (may be `null`/`undefined`).
+ * @returns `true` if `s` contains the exact `<body>File not found</body>`
+ * snippet or is the exact string `File not found`; otherwise `false`.
+ */
+export function isFileNotFoundHtml(s: string | undefined | null): boolean {
+  return !!s && (s === "File not found" || s.includes('<body>File not found</body>'));
 }

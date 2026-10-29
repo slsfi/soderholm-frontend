@@ -1,6 +1,6 @@
-import { Component, ElementRef, Inject, LOCALE_ID, NgZone, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription, switchMap } from 'rxjs';
+import { Component, ElementRef, LOCALE_ID, NgZone, OnDestroy, OnInit, Renderer2, inject } from '@angular/core';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { combineLatest, distinctUntilChanged, map, Observable, of, Subscription, switchMap } from 'rxjs';
 
 import { MarkdownService } from '@services/markdown.service';
 import { ScrollService } from '@services/scroll.service';
@@ -14,21 +14,19 @@ import { isBrowser } from '@utility-functions';
   standalone: false
 })
 export class AboutPage implements OnInit, OnDestroy {
+  private elementRef = inject(ElementRef);
+  private mdService = inject(MarkdownService);
+  private ngZone = inject(NgZone);
+  private renderer2 = inject(Renderer2);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private scrollService = inject(ScrollService);
+  private activeLocale = inject(LOCALE_ID);
+
   markdownText$: Observable<string | null>;
 
   private fragmentSubscription?: Subscription;
   private unlistenClickEvents?: () => void;
-
-  constructor(
-    private elementRef: ElementRef,
-    private mdService: MarkdownService,
-    private ngZone: NgZone,
-    private renderer2: Renderer2,
-    private route: ActivatedRoute,
-    private router: Router,
-    private scrollService: ScrollService,
-    @Inject(LOCALE_ID) private activeLocale: string
-  ) {}
 
   ngOnInit() {
     if (isBrowser()) {
@@ -41,11 +39,26 @@ export class AboutPage implements OnInit, OnDestroy {
       });
     }
 
-    this.markdownText$ = this.route.params.pipe(
-      switchMap(({id}) => {
+    const loadErrorMessage = '<p>' + $localize`:@@About.LoadingError:Sidans innehåll kunde inte laddas.` + '</p>';
+    const parentRouteData$ = this.route.parent ? this.route.parent.data : of({} as Data);
+
+    this.markdownText$ = combineLatest([
+      this.route.params,
+      this.route.data,
+      parentRouteData$
+    ]).pipe(
+      map(([params, routeData, parentRouteData]) => {
+        return params['id'] ?? routeData['backendPageId'] ?? parentRouteData['backendPageId'] ?? null;
+      }),
+      distinctUntilChanged(),
+      switchMap((id: string | null) => {
+        if (!id) {
+          return of(loadErrorMessage);
+        }
+
         return this.mdService.getParsedMdContent(
           this.activeLocale + '-' + id,
-          '<p>' + $localize`:@@About.LoadingError:Sidans innehåll kunde inte laddas.` + '</p>'
+          loadErrorMessage
         );
       })
     );
@@ -96,20 +109,20 @@ export class AboutPage implements OnInit, OnDestroy {
 
   private scrollToFragment(targetElemId: string, delayMs: number = 500) {
     if (!isBrowser()) return;
-  
+
     this.ngZone.runOutsideAngular(() => {
       let attemptsLeft = 10;
-  
+
       const tryScroll = () => {
         if (attemptsLeft-- < 1) return;
-  
+
         const scrollTargetElem = document.querySelector(
           'page-about:not([ion-page-hidden]):not(.ion-page-hidden) [id="' + targetElemId + '"]'
         );
         const scrollContainerElem = document.querySelector(
           'page-about:not([ion-page-hidden]):not(.ion-page-hidden) ion-content'
         )?.shadowRoot?.querySelector('[part="scroll"]');
-  
+
         if (scrollTargetElem && scrollContainerElem) {
           this.scrollService.scrollElementIntoView(
             scrollTargetElem as HTMLElement, 'top', 0, 'smooth', scrollContainerElem as HTMLElement
@@ -118,9 +131,9 @@ export class AboutPage implements OnInit, OnDestroy {
           setTimeout(tryScroll, delayMs);
         }
       };
-  
+
       tryScroll();
     });
   }
-  
+
 }
