@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('node:fs');
 const path = require('node:path');
-const { spawn } = require('node:child_process');
+const { spawn, spawnSync } = require('node:child_process');
 const { performance } = require('node:perf_hooks');
 const { setTimeout: delay } = require('node:timers/promises');
 
@@ -32,7 +31,7 @@ const DEFAULT_ROUTES = [
  *     Alias for --warm-runs.
  *
  *   --port <n> | --port=<n>
- *     Port used when starting dist/app/proxy-server.js (default: 4201).
+ *     Port used when starting npm run serve:ssr (default: 4201).
  *
  *   --route <path> | --route=<path>
  *     Add a single route. Can be repeated.
@@ -44,7 +43,7 @@ const DEFAULT_ROUTES = [
  *     Positional routes are also accepted (e.g. /sv/ /sv/collection/216/text/20280).
  *
  *   --skip-start
- *     Do not start proxy-server.js; benchmark an already running SSR server.
+ *     Do not start SSR; benchmark an already running server.
  *
  *   --base-url <url> | --base-url=<url>
  *     Base URL to benchmark. Default: http://127.0.0.1:<port>.
@@ -54,6 +53,10 @@ const DEFAULT_ROUTES = [
  *
  *   --request-timeout-ms <n> | --request-timeout-ms=<n>
  *     Per-request timeout in milliseconds (default: 120000).
+ *
+ *   --request-delay-ms <n> | --request-delay-ms=<n>
+ *     Pause between requests in milliseconds, outside measured time (default: 2000).
+ *     Set to 0 to disable pacing on a dedicated local server.
  *
  *   --help | -h
  *     Show help text.
@@ -76,13 +79,14 @@ Usage:
 Options:
   --warm-runs <n> | --warm-runs=<n>          Number of warm runs per route (default: 5)
   --runs <n> | --runs=<n>                    Alias for --warm-runs
-  --port <n> | --port=<n>                    Port for proxy-server.js when auto-starting (default: 4201)
+  --port <n> | --port=<n>                    Port for serve:ssr when auto-starting (default: 4201)
   --route <path> | --route=<path>            Add one route (repeatable)
   --routes <csv> | --routes=<csv>            Add comma-separated routes
   --skip-start                               Benchmark an already running SSR server
   --base-url <url> | --base-url=<url>        Base URL (default: http://127.0.0.1:<port>)
   --startup-timeout-ms <n>                   Startup wait timeout in ms (default: 30000)
   --request-timeout-ms <n>                   Request timeout in ms (default: 120000)
+  --request-delay-ms <n>                     Pause between requests in ms (default: 2000; 0 disables)
   --help, -h                                 Show this help
 
 Output:
@@ -106,6 +110,7 @@ function parseArgs(argv) {
     port: 4201,
     startupTimeoutMs: 30000,
     requestTimeoutMs: 120000,
+    requestDelayMs: 2000,
     routes: [...DEFAULT_ROUTES],
     skipStart: false,
     baseUrl: '',
@@ -173,6 +178,14 @@ function parseArgs(argv) {
       continue;
     }
 
+    if (arg === '--request-delay-ms' || arg.startsWith('--request-delay-ms=')) {
+      const value = arg === '--request-delay-ms'
+        ? argv[++i]
+        : arg.slice('--request-delay-ms='.length);
+      opts.requestDelayMs = value?.trim() ? Number(value) : NaN;
+      continue;
+    }
+
     if (arg.startsWith('--route=')) {
       routes.push(arg.slice('--route='.length));
       continue;
@@ -230,6 +243,10 @@ function parseArgs(argv) {
   if (!Number.isFinite(opts.requestTimeoutMs) || opts.requestTimeoutMs < 1000) {
     throw new Error('Invalid --request-timeout-ms value');
   }
+  // Node timers overflow above this limit and would silently remove the pause.
+  if (!Number.isInteger(opts.requestDelayMs) || opts.requestDelayMs < 0 || opts.requestDelayMs > 2147483647) {
+    throw new Error('Invalid --request-delay-ms value: expected an integer from 0 to 2147483647');
+  }
 
   return opts;
 }
@@ -271,10 +288,12 @@ async function fetchWithTiming(url, timeoutMs) {
   }
 }
 
-async function waitForServer(baseUrl, readyRoute, startupTimeoutMs, requestTimeoutMs) {
+async function waitForServer(baseUrl, readyRoute, startupTimeoutMs, requestTimeoutMs, requestDelayMs, getStartupError) {
   const started = performance.now();
 
   while (performance.now() - started < startupTimeoutMs) {
+    const startupError = getStartupError();
+    if (startupError) throw startupError;
     const result = await fetchWithTiming(
       getUrl(baseUrl, readyRoute),
       Math.min(requestTimeoutMs, 5000),
@@ -282,7 +301,11 @@ async function waitForServer(baseUrl, readyRoute, startupTimeoutMs, requestTimeo
     if (result.status !== 'ERR') {
       return;
     }
-    await delay(300);
+    // Failed readiness probes also leave the configured recovery time.
+    const remainingMs = startupTimeoutMs - (performance.now() - started);
+    if (remainingMs > 0) {
+      await delay(Math.min(Math.max(300, requestDelayMs), remainingMs));
+    }
   }
 
   throw new Error(`SSR server did not start within ${startupTimeoutMs} ms`);
@@ -336,19 +359,30 @@ async function main() {
   const repoRoot = path.resolve(__dirname, '..');
   const baseUrl = opts.baseUrl || `http://127.0.0.1:${opts.port}`;
   const routes = opts.routes.map(normalizeRoute);
-  const serverEntrypoint = path.join(repoRoot, 'dist', 'app', 'proxy-server.js');
-
-  if (!opts.skipStart && !fs.existsSync(serverEntrypoint)) {
-    throw new Error(
-      `Missing ${serverEntrypoint}. Run "npm run build:ssr" first.`,
-    );
-  }
 
   let serverProc = null;
+  let startupError = null;
+  let serverStderr = '';
 
   const stopServer = () => {
-    if (serverProc && !serverProc.killed) {
-      serverProc.kill('SIGTERM');
+    if (!serverProc?.pid || serverProc.exitCode !== null || serverProc.signalCode !== null) return;
+
+    // npm adds a shell/runtime process below the launcher. Stop the whole tree
+    // so completion, interruption, and failed startup do not leave SSR running.
+    if (process.platform === 'win32') {
+      const result = spawnSync('taskkill', ['/pid', String(serverProc.pid), '/T', '/F'], {
+        encoding: 'utf8', windowsHide: true, timeout: 10000,
+      });
+      if (result.error) throw result.error;
+      if (result.status !== 0) {
+        throw new Error(`Could not stop SSR process tree: ${result.stderr || result.stdout}`);
+      }
+    } else {
+      try {
+        process.kill(-serverProc.pid, 'SIGTERM');
+      } catch (error) {
+        if (error.code !== 'ESRCH') throw error;
+      }
     }
   };
 
@@ -361,30 +395,48 @@ async function main() {
     process.exit(143);
   });
 
-  if (!opts.skipStart) {
-    serverProc = spawn(process.execPath, [serverEntrypoint], {
-      cwd: repoRoot,
-      env: { ...process.env, PORT: String(opts.port) },
-      stdio: ['ignore', 'pipe', 'pipe'],
-    });
-
-    serverProc.stdout.on('data', () => {});
-    serverProc.stderr.on('data', () => {});
-
-    await waitForServer(
-      baseUrl,
-      routes[0] || '/sv/',
-      opts.startupTimeoutMs,
-      opts.requestTimeoutMs,
-    );
-  }
-
   try {
+    if (!opts.skipStart) {
+      // The command is constant; CLI inputs are passed through the environment.
+      // A shell also supports npm.cmd on Windows without assuming npm's path.
+      serverProc = spawn('npm run serve:ssr', {
+        cwd: repoRoot,
+        env: { ...process.env, PORT: String(opts.port) },
+        stdio: ['ignore', 'pipe', 'pipe'],
+        shell: true,
+        detached: process.platform !== 'win32',
+        windowsHide: true,
+      });
+      serverProc.stdout.on('data', () => {});
+      serverProc.stderr.on('data', data => {
+        serverStderr = (serverStderr + data.toString()).slice(-4000);
+      });
+      serverProc.once('error', error => { startupError = error; });
+      serverProc.once('exit', (code, signal) => {
+        startupError = new Error(`npm run serve:ssr exited (${signal || code}). Run "npm run build:ssr" first if output is missing.\n${serverStderr.trim()}`);
+      });
+
+      await waitForServer(
+        baseUrl,
+        routes[0] || '/sv/',
+        opts.startupTimeoutMs,
+        opts.requestTimeoutMs,
+        opts.requestDelayMs,
+        () => startupError,
+      );
+    }
+
     const results = [];
     const totalRequestsPerRoute = opts.warmRuns + 1;
+    let hasPreviousRequest = !opts.skipStart;
 
     for (const route of routes) {
       for (let run = 1; run <= totalRequestsPerRoute; run++) {
+        // Start timing only after the previous response's recovery pause,
+        // including after readiness, failures, and transitions between routes.
+        if (hasPreviousRequest && opts.requestDelayMs > 0) {
+          await delay(opts.requestDelayMs);
+        }
         const result = await fetchWithTiming(
           getUrl(baseUrl, route),
           opts.requestTimeoutMs,
@@ -397,11 +449,13 @@ async function main() {
           bytes: result.bytes,
           error: result.error,
         });
+        hasPreviousRequest = true;
       }
     }
 
     console.log(`Base URL: ${baseUrl}`);
     console.log(`Warm runs per route: ${opts.warmRuns}`);
+    console.log(`Request delay: ${opts.requestDelayMs} ms (excluded from response timings)`);
     console.log(`Total requests per route (cold + warm): ${totalRequestsPerRoute}`);
     console.table(
       results.map((r) => ({

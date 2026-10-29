@@ -36,12 +36,14 @@ export const config: Config = {
     },
     ssr: {
       trustProxyHops: 2,
+      trustedProxyAddresses: ["loopback", "linklocal", "uniquelocal"],
       collectionSideMenu: false
     }
   },
   articles: [],
   collections: {
     addTEIClassNames: false,
+    useStaticCoverData: false,
     replaceImageAssetsPaths: false,
     enableLegacyIDs: false,
     enableMathJax: false,
@@ -162,6 +164,9 @@ export const config: Config = {
       showTextDownloadButton: false,
       showURNButton: false
     },
+    ebook: {
+      showURNButton: false
+    },
     elasticSearch: {
       enableFilters: true,
       enableSortOptions: false,
@@ -277,7 +282,7 @@ export const config: Config = {
       }
     },
     mediaCollection: {
-      showURNButton: true
+      showURNButton: false
     },
     text: {
       defaultViews: ["facsimiles", "manuscripts"],
@@ -374,7 +379,8 @@ export const config: Config = {
         accessibilityStatement: false,
       },
       defaultExpanded: false,
-      ungroupArticles: false
+      ungroupArticles: false,
+      ungroupIndices: true
     },
     manuscripts: {
       showTitle: false,
