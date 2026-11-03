@@ -304,11 +304,10 @@ ion-app[class][class] {
         margin-top: 0;
       }
     }
-
+  }
+  main-side-menu > ul > li:last-of-type span.label {
     /* Remove bottom border from last menu item on first level */
-    > ul > li:last-of-type span.label {
-      border-bottom: 0;
-    }
+    border-bottom: 0;
   }
 }
 
@@ -489,6 +488,368 @@ page-text {
     }
     img.img-placeholder-icon {
       width: 1.4125em;
+    }
+
+    section[role="doc-endnotes"] {
+      margin-top: 4em;
+    }
+  }
+
+  // Dagböcker reading-texts
+  .ksd-diary {
+    h3, h4, h6 {
+      font-family: var(--font-stack-app-base);
+    }
+    h3.ksd-heading-1 {
+      color: #727272;
+      font-size: 2.25em;
+      font-weight: 300;
+      margin: 0 0 5rem 0;
+    }
+    h4.ksd-heading-2 {
+      font-size: 1em;
+      font-weight: 700;
+      margin: 1.5em 0 0.5em 0;
+    }
+    h5.ksd-heading-3 {
+      font-size: 1em;
+      font-weight: normal;
+      font-style: italic;
+      margin-top: 1.2em;
+      margin-bottom: 0.4em;
+    }
+    h6.ksd-heading-4 {
+      font-size: 1em;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 + p, h4 + p, h5 + p, blockquote > p:first-child, li > p {
+      text-indent: 0;
+    }
+
+    h3 + section > h4 {
+      margin-top: 3em;
+    }
+
+    p.ksd-dateline + h5 {
+      margin-top: 0;
+    }
+
+    h4 + section > h5 {
+      margin-top: 0.8em;
+    }
+
+    section.ksd-chapter h5 {
+      font-size: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    h5 i {
+      font-style: normal;
+    }
+
+    section.ksd-chapter h5 + p.ksd-no-indent {
+      margin-top: 2em;
+    }
+    section.ksd-chapter h4 + p:not(.ksd-label) {
+      text-indent: 1.25em;
+    }
+    p.ksd-label {
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 600;
+      color:#595959;
+      margin-bottom: 0.75rem;
+      text-indent: 0;
+    }
+    section.ksd-chapter h5 + p {
+        text-indent: 1.25em;
+    }
+    p.ksd-dateline + h6 {
+      margin-top: 0;
+    }
+    div.ksd-opener {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+    p.ksd-dateline {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+    p:not(.ksd-label) + p.ksd-dateline {
+      margin-top: 1em;
+    }
+    p.ksd-dateline.ksd-space-before {
+      margin-top: 1em;
+    }
+    p.ksd-salute {
+      margin-bottom: 0.5em;
+    }
+    hr.blank {
+      margin-top: 1em;
+    }
+    hr.milestoneBar {
+      width: 10em;
+    }
+    hr.dashedBar {
+      height: 0;
+      border: 0;
+      border-top: 1px dashed #404040;
+      padding: 0;
+      margin: 1.5em 1.25em;
+    }
+    p.ksd-lg + hr.milestoneBar, p.ksd-lg + hr.dashedBar {
+      width: initial;
+      max-width: 16em;
+      text-align: left;
+      margin-left: 1.25em;
+    }
+    .ksd-no-indent {
+      text-indent: 0;
+    }
+    p.ksd-quote-ref {
+      margin-top: 0.5em;
+    }
+    p.ksd-lg {
+      margin-top: 0.8em;
+      margin-left: 1.25em;
+      text-indent: 0 !important;
+    }
+    p.ksd-lg.ksd-no-space {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 4em;
+    }
+    span.ksd-l {
+      display: inline-block;
+      margin-left: 1.25em;
+      text-indent: -1.25em;
+    }
+    blockquote {
+      margin: 0.8em 1.25em;
+    }
+    blockquote p.ksd-lg + blockquote p.ksd-lg {
+      margin-top: 0.8em;
+    }
+    ul {
+      list-style-type: none;
+    }
+  }
+}
+
+// Dagböcker frontmatter
+div.tei section.ksd-frontmatter {
+  .tei.section {
+    &::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: #444444;
+      margin: 3em auto;
+    }
+  }
+
+  section.ksd-titlepage,
+  .tei.header,
+  .tei.ksd-heading-1,
+  .tei.ksd-heading-2,
+  .tei.ksd-heading-3,
+  table {
+    font-family: var(--font-stack-app-base);
+  }
+
+  .tei.ksd-heading-1 {
+    font-weight: 700;
+    font-size: 1.5883em;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 0;
+
+    &.ksd-book-title {
+      font-size: 1.75em;
+      margin: 2em 0;
+    }
+  }
+
+  .tei.ksd-heading-2 {
+    font-weight: 700;
+    font-size: 1.125em;
+  }
+
+  .tei.ksd-heading-3 {
+    font-size: 1em;
+    font-style: italic;
+    margin-top: 1em;
+  }
+
+  p:first-of-type {
+    text-indent: 0;
+  }
+
+  .ksd-subtitle {
+    font-size: 1.125em;
+    margin-top: 0.5em;
+  }
+
+  .ksd-space-before,
+  .ksd-author {
+    margin-top: 1em;
+  }
+
+  .ksd-editors, .ksd-publisher {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .ksd-editors {
+    margin-bottom: 6em;
+  }
+
+  .ksd-om-boken,
+  .ksd-copyright-page {
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: #444444;
+      margin: 3em auto;
+    }
+  }
+
+  .ksd-copyright-page {
+    p {
+      text-indent: 0;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .ksd-signature {
+    margin-top: 0.75em;
+  }
+
+  p.ksd-lg {
+    margin-top: 0.8em;
+    margin-left: 1.25em;
+    text-indent: 0 !important;
+  }
+  p.ksd-lg.ksd-no-space {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 4em;
+  }
+  span.ksd-l {
+    display: inline-block;
+    margin-left: 1.25em;
+    text-indent: -1.25em;
+  }
+  .ksd-no-indent {
+    text-indent: 0;
+  }
+
+  blockquote + p {
+    text-indent: 0;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  section[data-id="recensioner"],
+  section.bibliography {
+    ul {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    margin: 1.5em 0;
+
+    caption.ksd-table-caption {
+      font-weight: 700;
+      text-align: center;
+      background-color: #efefef;
+      color: black;
+      padding: 0.25em 0.2em 0.25em 0.2em;
+      margin: 0 0 0.25em 0;
+      border-top: 1px solid #555555;
+      border-bottom: 1px solid #555555;
+    }
+  }
+
+  section[data-id="forteckning-over-grundtexter"] {
+    tr {
+      th:first-child,
+      td:first-child {
+        width: 30%;
+      }
+      th:last-child,
+      td:last-child {
+        width: 70%;
+        padding-left: 0.5em;
+      }
+    }
+  }
+
+  tr:first-child td {
+    padding-top: 0.5em;
+  }
+
+  th {
+    font-weight: 400;
+    color: #555555;
+    padding: 0.25em 0.2em 0.25em 0.2em;
+    border-bottom: 1px solid #555555;
+  }
+
+  th, td {
+    vertical-align: top;
+    text-align: left;
+  }
+
+  td {
+    padding: 0.1em;
+  }
+
+  td.ksd-center {
+    text-align: center;
+    padding-right: 20%;
+  }
+
+  section[data-id="manuskriptversioner"] {
+    tr {
+      th:first-child,
+      td:first-child {
+        width: 50%;
+        padding-right: 0.5em;
+      }
+
+      th:last-child,
+      td:last-child {
+        width: 50%;
+        padding-left: 0.5em;
+      }
+
+      td {
+        padding-top: 0;
+        padding-bottom: 0.5em;
+      }
+
+      &.ksd-year-start {
+        border-top: 1px solid #555555;
+        padding-top: 0.5em;
+
+        td {
+          padding-top: 0.5em;
+        }
+      }
     }
   }
 }

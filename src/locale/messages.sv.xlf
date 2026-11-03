@@ -1213,31 +1213,31 @@
     <unit id="MainSideMenu.Articles">
       <segment state="initial">
         <source>Artiklar</source>
-        <target>Artiklar</target>
+        <target>Om Kerstin Söderholm</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup1">
       <segment state="initial">
         <source>Innehåll</source>
-        <target>Dagboksarkiv</target>
+        <target>Dagböcker</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup2">
       <segment state="initial">
         <source>Innehåll 2</source>
-        <target>Brevarkiv</target>
+        <target>Dagboksarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup3">
       <segment state="initial">
         <source>Innehåll 3</source>
-        <target>Manuskriptarkiv</target>
+        <target>Brevarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup4">
       <segment state="initial">
         <source>Innehåll 4</source>
-        <target>Innehåll 4</target>
+        <target>Manuskriptarkiv</target>
       </segment>
     </unit>
     <unit id="MainSideMenu.CollectionsGroup5">
@@ -2359,7 +2359,7 @@
     <unit id="TopMenu.About">
       <segment state="initial">
         <source>Om utgåvan</source>
-        <target>Kerstin Söderholm</target>
+        <target>Om utgåvan</target>
       </segment>
     </unit>
     <unit id="TopMenu.AriaLabel">

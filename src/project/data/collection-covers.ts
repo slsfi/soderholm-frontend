@@ -1280,5 +1280,11 @@ export const collectionCovers: CollectionCovers = {
       imageURL: 'assets/images/covers/1736.jpg',
       imageAltText: 'Manuskript'
     }
+  },
+  2583: {
+    'sv': {
+      imageURL: 'assets/images/covers/Kerstin-Soderholms-dagbocker-cover-web.jpg',
+      imageAltText: 'Ett svartvitt foto av en ung kvinna med kort, vågigt hår, som ler försiktigt mot kameran. I bakgrunden handskriven text och i förgrunden står det ”Kerstin Söderholms dagböcker”.'
+    }
   }
 };
