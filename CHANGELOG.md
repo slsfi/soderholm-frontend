@@ -8,10 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [4.1.1-production.1] – 2026-11-03
+
 ### Changed
 
-- Update to base version [`4.1.1`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/4.1.1) from upstream, original repository.
-- Update global style overrides, config, translations, and epub.
+- Update to base version [`4.1.1`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/4.1.1) from upstream, original repository. ([ff9f3d1](https://github.com/slsfi/soderholm-frontend/commit/ff9f3d18647c999063496173aafdd7338d67b08b), [7e4d42e](https://github.com/slsfi/soderholm-frontend/commit/7e4d42e4de0321335cfc232fb555a584f5fb4025), [60f8c7c](https://github.com/slsfi/soderholm-frontend/commit/60f8c7cf1f74355b658daa11e17d8f7d94321b9c), [c0c31df](https://github.com/slsfi/soderholm-frontend/commit/c0c31df0c38adf4abb4f3c7dfd7c3b6d47f10478), [d25419e](https://github.com/slsfi/soderholm-frontend/commit/d25419ef683414721f6c8d6c7883d4806f4a0662), [aebdf9d](https://github.com/slsfi/soderholm-frontend/commit/aebdf9d59c5a7eebc185f128a06ac1e9792a4f5f), [d84e8a9](https://github.com/slsfi/soderholm-frontend/commit/d84e8a981a8a1078f69d220ce3d3dccb1ac99a96), [eae8464](https://github.com/slsfi/soderholm-frontend/commit/eae84643b14bb10db152d7223ecd405906b6d121), [c4cf94b](https://github.com/slsfi/soderholm-frontend/commit/c4cf94b735970dd958314d92d82b70cd68a7ee2b))
+- Update global style overrides, config, assets, translations, and epub. ([5384688](https://github.com/slsfi/soderholm-frontend/commit/5384688154c3a7285c0cc1ab7d34fc173fd11dea), [46ae2f8](https://github.com/slsfi/soderholm-frontend/commit/46ae2f8de3fd7cc44eef245beb63c8c490248134), [b6da939](https://github.com/slsfi/soderholm-frontend/commit/b6da93926efed4c934d8b5306e72c76897e30a3f))
 
 
 
@@ -2029,6 +2033,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[4.1.1-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.7-production.1...4.1.1-production.1
 [1.8.7-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.6-production.1...1.8.7-production.1
 [1.8.6-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.5-production.1...1.8.6-production.1
 [1.8.5-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.4-production.1...1.8.5-production.1
