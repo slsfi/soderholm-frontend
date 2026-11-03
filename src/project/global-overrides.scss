@@ -331,6 +331,11 @@ page-home {
   }
 }
 
+.markdown img {
+  max-width: 100%;
+  height: auto;
+}
+
 page-about {
   .markdown {
     table {
@@ -344,6 +349,20 @@ page-about {
         border: 1px solid #d3d3d3;
         padding: .1em;
       }
+    }
+  }
+}
+
+page-article {
+  .markdown {
+    h2 {
+      margin-top: 2em;
+    }
+  }
+
+  .article-toc-list {
+    .article-toc-level-2 {
+      font-weight: normal;
     }
   }
 }
