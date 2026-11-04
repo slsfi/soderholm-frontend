@@ -250,14 +250,14 @@ export const config: Config = {
     elasticSearch: {
       enableFilters: true,
       enableSortOptions: false,
-      filterGroupsOpenByDefault: ["Collection"],
+      filterGroupsOpenByDefault: ["Type", "Collection"],
       hitsPerPage: 15,
       indices: ["soderholm"],
       openReadingTextWithComments: false,
       textHighlightFragmentSize: 150,
       textHighlightType: "fvh",
       textTitleHighlightType: "fvh",
-      typeFilterGroupOptions: ["ms"],
+      typeFilterGroupOptions: ["est", "ms", "inl", "tit", "fore"],
       fixedFilters: [
         {
           terms: {
@@ -272,10 +272,17 @@ export const config: Config = {
       ],
       additionalSourceFields: [],
       aggregations: {
+        Type: {
+          terms: {
+            field: "text_type",
+            size: 10,
+            order: {_key: "asc"}
+          }
+        },
         Collection: {
           terms: {
             field: "publication_data.collection_name.keyword",
-            size: 40
+            size: 300
           }
         }
       }

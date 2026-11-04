@@ -541,7 +541,7 @@
     <unit id="ElasticSearch.Collection">
       <segment state="initial">
         <source>Delutgåva</source>
-        <target>Dagboksmanuskript</target>
+        <target>Dagboksmanuskript eller utgåva</target>
       </segment>
     </unit>
     <unit id="ElasticSearch.CommentaryTo">

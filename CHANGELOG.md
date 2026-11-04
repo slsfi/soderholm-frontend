@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+### Changed
+
+- Enable search for the diary edition.
+
 
 
 ## [4.1.1-production.1] – 2026-11-03
