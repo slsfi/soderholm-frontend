@@ -8,9 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [4.1.1-production.2] – 2026-11-04
+
 ### Changed
 
-- Enable search for the diary edition.
+- Enable search for the diary edition. ([3b5f13c](https://github.com/slsfi/soderholm-frontend/commit/3b5f13cbc5ff309493ac6e32824f959c14edf9ef))
 
 
 
@@ -2037,6 +2041,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[4.1.1-production.2]: https://github.com/slsfi/soderholm-frontend/compare/4.1.1-production.1...4.1.1-production.2
 [4.1.1-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.7-production.1...4.1.1-production.1
 [1.8.7-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.6-production.1...1.8.7-production.1
 [1.8.6-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.5-production.1...1.8.6-production.1
