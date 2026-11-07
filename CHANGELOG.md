@@ -8,13 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## Unreleased
 
+
+
+## [4.2.0-production.1] – 2026-11-07
+
 ### Changed
 
-- Update to base version [`4.2.0`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/4.2.0) from upstream, original repository.
+- Update to base version [`4.2.0`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/4.2.0) from upstream, original repository. ([8e51eb8](https://github.com/slsfi/soderholm-frontend/commit/8e51eb8d0ba87d8e544689b27c90f1338d06004f))
 
 ### Fixed
 
-- Article and introduction styles.
+- Article and introduction styles. ([08b6cba](https://github.com/slsfi/soderholm-frontend/commit/08b6cba120ccb355e1571d609e5271b797150f14))
 
 
 
@@ -2069,6 +2073,7 @@ siteLogoDimensions: {
 [1.0.1]: https://github.com/slsfi/digital-edition-frontend-ng/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/v1.0.0
 
+[4.2.0-production.1]: https://github.com/slsfi/soderholm-frontend/compare/4.1.1-production.2...4.2.0-production.1
 [4.1.1-production.2]: https://github.com/slsfi/soderholm-frontend/compare/4.1.1-production.1...4.1.1-production.2
 [4.1.1-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.7-production.1...4.1.1-production.1
 [1.8.7-production.1]: https://github.com/slsfi/soderholm-frontend/compare/1.8.6-production.1...1.8.7-production.1
