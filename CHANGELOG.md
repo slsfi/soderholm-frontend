@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 - Update to base version [`4.2.0`](https://github.com/slsfi/digital-edition-frontend-ng/releases/tag/4.2.0) from upstream, original repository.
 
+### Fixed
+
+- Article and introduction styles.
+
 
 
 ## [4.2.0] – 2026-11-07

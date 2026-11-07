@@ -331,11 +331,6 @@ page-home {
   }
 }
 
-.markdown img {
-  max-width: 100%;
-  height: auto;
-}
-
 page-about {
   .markdown {
     table {
@@ -354,12 +349,6 @@ page-about {
 }
 
 page-article {
-  .markdown {
-    h2 {
-      margin-top: 2em;
-    }
-  }
-
   .article-toc-list {
     .article-toc-level-2 {
       font-weight: normal;
@@ -709,8 +698,8 @@ div.tei section.ksd-frontmatter {
   }
 
   .ksd-subtitle {
-    font-size: 1.125em;
-    margin-top: 0.5em;
+    font-size: 1.25em;
+    margin: 0.75em 0 1.5em 0;
   }
 
   .ksd-space-before,
